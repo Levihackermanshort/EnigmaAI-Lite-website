@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: transparent;
+    background: linear-gradient(120deg, rgba(15,32,39,0.95), rgba(44,83,100,0.92));
     color: #f4f4f4;
     min-height: 100vh;
     overflow-x: hidden;
@@ -155,4 +155,52 @@ footer {
     .hero-content {
         padding: 1.2rem 1rem;
     }
+}
+
+.holo-triangle {
+    position: absolute;
+    left: -60px;
+    top: 40px;
+    width: 80px;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 16px #00ffe7) blur(0.5px);
+    animation: holo-float 3.5s ease-in-out infinite alternate, holo-rotate 8s linear infinite;
+    z-index: 2;
+}
+.holo-landscape {
+    position: absolute;
+    left: 50%;
+    bottom: -60px;
+    width: 320px;
+    transform: translateX(-50%);
+    opacity: 0.7;
+    filter: drop-shadow(0 0 24px #00ffe7) blur(0.5px);
+    animation: holo-float2 5s ease-in-out infinite alternate;
+    z-index: 2;
+}
+.holo-globe {
+    position: absolute;
+    right: -70px;
+    top: 10px;
+    width: 100px;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 18px #00ffe7) blur(0.5px);
+    animation: holo-float 4.5s ease-in-out infinite alternate, holo-spin 12s linear infinite;
+    z-index: 2;
+}
+@keyframes holo-float {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-18px) scale(1.05); }
+}
+@keyframes holo-float2 {
+    0% { transform: translateX(-50%) scale(1); }
+    100% { transform: translateX(-50%) scale(1.07) translateY(-12px); }
+}
+@keyframes holo-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes holo-spin {
+    0% { transform: rotate(0deg) scale(1); }
+    100% { transform: rotate(360deg) scale(1.04); }
 } 
