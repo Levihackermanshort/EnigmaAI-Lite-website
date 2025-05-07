@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    background: transparent;
     color: #f4f4f4;
     min-height: 100vh;
     overflow-x: hidden;
