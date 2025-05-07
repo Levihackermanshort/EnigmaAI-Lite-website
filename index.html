@@ -1,206 +1,116 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(120deg, rgba(15,32,39,0.95), rgba(44,83,100,0.92));
-    color: #f4f4f4;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma AI - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="bg-animated-network"></div>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Enigma AI Logo" height="40">
+            <span>Enigma AI</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vision.html">Vision</a></li>
+            <li><a href="background.html">Background</a></li>
+            <li><a href="questions.html">Research Questions</a></li>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="deployment.html">Deployment</a></li>
+            <li><a href="ethics.html">Ethics & Risk</a></li>
+            <li><a href="timeline.html">Timeline</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <div style="position:relative; display:inline-block;">
+            <img src="robotic_hand.png" alt="Robotic Hand AI" class="hero-img">
+            <img src="triangle.png" alt="Hologram Triangle" class="holo-triangle">
+            <img src="polygonal_landscape.png" alt="Hologram Landscape" class="holo-landscape">
+            <img src="globe.png" alt="Hologram Globe" class="holo-globe">
+        </div>
+        <div class="hero-content">
+            <h1>Enigma AI</h1>
+            <h2>Research Proposal for AI Organizations</h2>
+            <p>Author: Zeyad Maeen<br>Affiliation: University of Huddersfield<br>Academic Year: 2024 – 2025</p>
+            <p class="summary">Enigma AI is a modular, open-domain AI assistant designed to combine transparency, efficiency, and flexibility. Explore our vision for the future of ethical, user-centric AI.</p>
+        </div>
+    </header>
+    <footer>
+        &copy; 2024 Enigma AI – University of Huddersfield
+    </footer>
+    <script>
+    const canvas = document.createElement('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.width = '100vw';
+    canvas.style.height = '100vh';
+    canvas.style.position = 'fixed';
+    canvas.style.top = 0;
+    canvas.style.left = 0;
+    canvas.style.zIndex = 0;
+    canvas.style.pointerEvents = 'none';
+    document.getElementById('bg-animated-network').appendChild(canvas);
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(20, 30, 48, 0.95);
-    padding: 0.5rem 2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    animation: navbarGlow 2.5s infinite alternate;
-}
-@keyframes navbarGlow {
-    0% { box-shadow: 0 2px 8px #00ffe7, 0 0 0 #00ffe7; }
-    100% { box-shadow: 0 2px 24px #00ffe7, 0 0 16px #00ffe7; }
-}
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #00ffe7;
-    letter-spacing: 1px;
-    text-shadow: 0 0 8px #00ffe7, 0 0 16px #00ffe7;
-    animation: logoPulse 2s infinite alternate;
-}
-@keyframes logoPulse {
-    0% { text-shadow: 0 0 8px #00ffe7, 0 0 16px #00ffe7; }
-    100% { text-shadow: 0 0 24px #00ffe7, 0 0 32px #00ffe7; }
-}
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-}
-.nav-links li a {
-    color: #f4f4f4;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: color 0.3s, text-shadow 0.3s, background 0.3s;
-    position: relative;
-    padding: 0.3em 0.7em;
-    border-radius: 8px;
-}
-.nav-links li a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #00ffe7;
-    transition: width 0.3s;
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-}
-.nav-links li a:hover {
-    color: #00ffe7;
-    background: rgba(0,255,231,0.08);
-    text-shadow: 0 0 8px #00ffe7;
-}
-.nav-links li a:hover::after {
-    width: 100%;
-}
-
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 2rem 2rem 2rem;
-    gap: 2rem;
-    background: transparent;
-    min-height: 60vh;
-    position: relative;
-    overflow: hidden;
-}
-.hero::before {
-    content: none;
-}
-.hero-img {
-    width: 520px;
-    max-width: 60vw;
-    border-radius: 1.5rem;
-    box-shadow: 0 8px 32px rgba(0,255,231,0.15);
-    animation: float 3s ease-in-out infinite;
-    z-index: 1;
-}
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-18px); }
-}
-.hero-content {
-    max-width: 600px;
-    background: rgba(20, 30, 48, 0.85);
-    padding: 2rem 2.5rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 4px 24px rgba(0,255,231,0.08);
-    animation: fadeIn 1.5s;
-    z-index: 1;
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.hero-content h1 {
-    font-size: 2.8rem;
-    color: #00ffe7;
-    margin-bottom: 0.5rem;
-    letter-spacing: 2px;
-}
-.hero-content h2 {
-    font-size: 1.5rem;
-    color: #fff;
-    margin-bottom: 1rem;
-    font-weight: 400;
-}
-.hero-content .summary {
-    margin-top: 1.5rem;
-    font-size: 1.15rem;
-    color: #b2fff7;
-    line-height: 1.6;
-}
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    background: rgba(20, 30, 48, 0.95);
-    color: #00ffe7;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    margin-top: 2rem;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
-}
-
-@media (max-width: 900px) {
-    .hero {
-        flex-direction: column;
-        padding: 2rem 1rem;
+    const ctx = canvas.getContext('2d');
+    let nodes = [];
+    const NODE_COUNT = 60;
+    for (let i = 0; i < NODE_COUNT; i++) {
+      nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.7,
+        vy: (Math.random() - 0.5) * 0.7
+      });
     }
-    .hero-img {
-        width: 90vw;
-        max-width: 90vw;
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Draw glowing lines
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          let dx = nodes[i].x - nodes[j].x;
+          let dy = nodes[i].y - nodes[j].y;
+          let dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 180) {
+            ctx.save();
+            ctx.strokeStyle = 'rgba(0,255,231,' + (0.8 - dist / 200) + ')';
+            ctx.shadowColor = '#00ffe7';
+            ctx.shadowBlur = 18;
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+            ctx.restore();
+          }
+        }
+      }
+      // Draw glowing nodes
+      for (let node of nodes) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, 6, 0, 2 * Math.PI);
+        ctx.fillStyle = '#00ffe7';
+        ctx.shadowColor = '#00ffe7';
+        ctx.shadowBlur = 24;
+        ctx.fill();
+        ctx.restore();
+        node.x += node.vx;
+        node.y += node.vy;
+        if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+        if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+      }
+      requestAnimationFrame(draw);
     }
-    .hero-content {
-        padding: 1.2rem 1rem;
-    }
-}
-
-.holo-triangle {
-    position: absolute;
-    left: -60px;
-    top: 40px;
-    width: 80px;
-    opacity: 0.85;
-    filter: drop-shadow(0 0 16px #00ffe7) blur(0.5px);
-    animation: holo-float 3.5s ease-in-out infinite alternate, holo-rotate 8s linear infinite;
-    z-index: 2;
-}
-.holo-landscape {
-    position: absolute;
-    left: 50%;
-    bottom: -60px;
-    width: 320px;
-    transform: translateX(-50%);
-    opacity: 0.7;
-    filter: drop-shadow(0 0 24px #00ffe7) blur(0.5px);
-    animation: holo-float2 5s ease-in-out infinite alternate;
-    z-index: 2;
-}
-.holo-globe {
-    position: absolute;
-    right: -70px;
-    top: 10px;
-    width: 100px;
-    opacity: 0.8;
-    filter: drop-shadow(0 0 18px #00ffe7) blur(0.5px);
-    animation: holo-float 4.5s ease-in-out infinite alternate, holo-spin 12s linear infinite;
-    z-index: 2;
-}
-@keyframes holo-float {
-    0% { transform: translateY(0) scale(1); }
-    100% { transform: translateY(-18px) scale(1.05); }
-}
-@keyframes holo-float2 {
-    0% { transform: translateX(-50%) scale(1); }
-    100% { transform: translateX(-50%) scale(1.07) translateY(-12px); }
-}
-@keyframes holo-rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-@keyframes holo-spin {
-    0% { transform: rotate(0deg) scale(1); }
-    100% { transform: rotate(360deg) scale(1.04); }
-} 
+    draw();
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+    </script>
+</body>
+</html> 
