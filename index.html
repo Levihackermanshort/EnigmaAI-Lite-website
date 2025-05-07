@@ -8,6 +8,7 @@
 </head>
 <body>
     <div id="bg-animated-network"></div>
+    <div id="wireframe-landscape"></div>
     <nav class="navbar">
         <div class="logo">
             <img src="logo.png" alt="Enigma AI Logo" height="40">
@@ -109,6 +110,61 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
+    </script>
+    <script>
+    // Wireframe landscape animation
+    (function() {
+      const landscape = document.createElement('canvas');
+      landscape.width = window.innerWidth;
+      landscape.height = 220;
+      landscape.style.width = '100vw';
+      landscape.style.height = '220px';
+      landscape.style.position = 'fixed';
+      landscape.style.left = 0;
+      landscape.style.bottom = 0;
+      landscape.style.zIndex = 1;
+      landscape.style.pointerEvents = 'none';
+      document.getElementById('wireframe-landscape').appendChild(landscape);
+      const ctx = landscape.getContext('2d');
+      let t = 0;
+      function drawLandscape() {
+        ctx.clearRect(0, 0, landscape.width, landscape.height);
+        ctx.save();
+        ctx.translate(0, landscape.height-10);
+        for (let y = 0; y < 6; y++) {
+          ctx.beginPath();
+          for (let x = 0; x <= landscape.width; x += 32) {
+            let height = Math.sin((x/120) + t + y*0.5) * 18 + y*28;
+            ctx.lineTo(x, -height);
+          }
+          ctx.strokeStyle = 'rgba(0,255,231,0.7)';
+          ctx.lineWidth = 2;
+          ctx.shadowColor = '#00ffe7';
+          ctx.shadowBlur = 8;
+          ctx.stroke();
+        }
+        // Draw vertical lines
+        for (let x = 0; x <= landscape.width; x += 32) {
+          ctx.beginPath();
+          ctx.moveTo(x, 0);
+          for (let y = 0; y < 6; y++) {
+            let height = Math.sin((x/120) + t + y*0.5) * 18 + y*28;
+            ctx.lineTo(x, -height);
+          }
+          ctx.strokeStyle = 'rgba(0,255,231,0.3)';
+          ctx.lineWidth = 1;
+          ctx.shadowBlur = 0;
+          ctx.stroke();
+        }
+        ctx.restore();
+        t += 0.012;
+        requestAnimationFrame(drawLandscape);
+      }
+      drawLandscape();
+      window.addEventListener('resize', () => {
+        landscape.width = window.innerWidth;
+      });
+    })();
     </script>
 </body>
 </html> 
