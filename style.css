@@ -159,42 +159,49 @@ footer {
 
 .holo-triangle {
     position: absolute;
-    left: -60px;
-    top: 40px;
-    width: 80px;
+    left: -50px;
+    top: 60px;
+    width: 60px;
     opacity: 0.85;
-    filter: drop-shadow(0 0 16px #00ffe7) blur(0.5px);
+    filter: drop-shadow(0 0 24px #00ffe7) blur(1px);
     animation: holo-float 3.5s ease-in-out infinite alternate, holo-rotate 8s linear infinite;
+    mix-blend-mode: screen;
+    z-index: 2;
+}
+.holo-globe {
+    position: absolute;
+    right: -60px;
+    top: 10px;
+    width: 80px;
+    opacity: 0.7;
+    filter: drop-shadow(0 0 32px #00ffe7) blur(1.5px);
+    animation: holo-float2 4.5s ease-in-out infinite alternate, holo-spin 12s linear infinite;
+    mix-blend-mode: lighten;
     z-index: 2;
 }
 .holo-landscape {
     position: absolute;
     left: 50%;
-    bottom: -60px;
-    width: 320px;
+    bottom: -40px;
+    width: 220px;
     transform: translateX(-50%);
-    opacity: 0.7;
-    filter: drop-shadow(0 0 24px #00ffe7) blur(0.5px);
-    animation: holo-float2 5s ease-in-out infinite alternate;
-    z-index: 2;
-}
-.holo-globe {
-    position: absolute;
-    right: -70px;
-    top: 10px;
-    width: 100px;
-    opacity: 0.8;
-    filter: drop-shadow(0 0 18px #00ffe7) blur(0.5px);
-    animation: holo-float 4.5s ease-in-out infinite alternate, holo-spin 12s linear infinite;
+    opacity: 0.6;
+    filter: drop-shadow(0 0 32px #00ffe7) blur(1.5px);
+    animation: holo-float3 5s ease-in-out infinite alternate;
+    mix-blend-mode: screen;
     z-index: 2;
 }
 @keyframes holo-float {
     0% { transform: translateY(0) scale(1); }
-    100% { transform: translateY(-18px) scale(1.05); }
+    100% { transform: translateY(-12px) scale(1.08); }
 }
 @keyframes holo-float2 {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.04) translateY(-8px); }
+}
+@keyframes holo-float3 {
     0% { transform: translateX(-50%) scale(1); }
-    100% { transform: translateX(-50%) scale(1.07) translateY(-12px); }
+    100% { transform: translateX(-50%) scale(1.05) translateY(-10px); }
 }
 @keyframes holo-rotate {
     0% { transform: rotate(0deg); }
