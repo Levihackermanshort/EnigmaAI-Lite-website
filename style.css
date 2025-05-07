@@ -217,4 +217,19 @@ footer {
 }
 .hero-content h1 {
     color: #00ffe7;
+}
+
+.footer-holo-landscape {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 70vw;
+    min-width: 600px;
+    max-width: 1200px;
+    opacity: 0.7;
+    filter: drop-shadow(0 0 48px #00ffe7) blur(1.5px);
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: screen;
 } 
