@@ -53,41 +53,47 @@
 
     const ctx = canvas.getContext('2d');
     let nodes = [];
-    for (let i = 0; i < 30; i++) {
+    const NODE_COUNT = 60;
+    for (let i = 0; i < NODE_COUNT; i++) {
       nodes.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5
+        vx: (Math.random() - 0.5) * 0.7,
+        vy: (Math.random() - 0.5) * 0.7
       });
     }
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      // Draw lines
+      // Draw glowing lines
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           let dx = nodes[i].x - nodes[j].x;
           let dy = nodes[i].y - nodes[j].y;
           let dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
-            ctx.strokeStyle = 'rgba(0,255,231,' + (1 - dist / 150) + ')';
-            ctx.lineWidth = 1;
+          if (dist < 180) {
+            ctx.save();
+            ctx.strokeStyle = 'rgba(0,255,231,' + (0.8 - dist / 200) + ')';
+            ctx.shadowColor = '#00ffe7';
+            ctx.shadowBlur = 18;
+            ctx.lineWidth = 2.5;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
             ctx.stroke();
+            ctx.restore();
           }
         }
       }
-      // Draw nodes
+      // Draw glowing nodes
       for (let node of nodes) {
+        ctx.save();
         ctx.beginPath();
-        ctx.arc(node.x, node.y, 3, 0, 2 * Math.PI);
+        ctx.arc(node.x, node.y, 6, 0, 2 * Math.PI);
         ctx.fillStyle = '#00ffe7';
         ctx.shadowColor = '#00ffe7';
-        ctx.shadowBlur = 8;
+        ctx.shadowBlur = 24;
         ctx.fill();
-        ctx.shadowBlur = 0;
+        ctx.restore();
         node.x += node.vx;
         node.y += node.vy;
         if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
