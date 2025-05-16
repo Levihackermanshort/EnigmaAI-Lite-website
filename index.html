@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="Hologram Globe.png" alt="Hologram Globe" class="corner-holo-globe">
+    <img src="Hologram Globe.png" alt="Hologram Globe" class="corner-holo-globe" style="display:none;">
     <div id="bg-animated-network"></div>
     <nav class="navbar">
         <div class="logo">
@@ -28,23 +28,22 @@
         </ul>
     </nav>
     <header class="hero">
-        <div style="position:relative; display:inline-block;">
+        <div class="hero-visuals">
             <img src="robotic_hand.png" alt="Robotic Hand AI" class="hero-img">
-            <div class="scanline-overlay"></div>
-            <img src="Hologram Triangle.gif" alt="Hologram Triangle" class="holo-triangle">
-            <img src="Hologram Landscape.gif" alt="Hologram Landscape" class="holo-landscape">
         </div>
         <div class="hero-content">
             <h1>Enigma AI</h1>
             <h2>Research Proposal for AI Organizations</h2>
-            <p>Author: Zeyad Maeen<br>Affiliation: University of Huddersfield<br>Academic Year: 2024 – 2025</p>
             <p class="summary">Enigma AI is a modular, open-domain AI assistant designed to combine transparency, efficiency, and flexibility. Explore our vision for the future of ethical, user-centric AI.</p>
+            <div class="hero-cta">
+                <a href="vision.html" class="cta-btn">Our Vision</a>
+                <a href="contact.html" class="cta-btn secondary">Contact</a>
+            </div>
         </div>
     </header>
     <footer>
         &copy; 2024 Enigma AI – University of Huddersfield
     </footer>
-    <img src="Hologram Landscape.gif" alt="Hologram Landscape" class="footer-holo-landscape">
     <script>
     const canvas = document.createElement('canvas');
     canvas.width = window.innerWidth;
@@ -114,244 +113,118 @@
       canvas.height = window.innerHeight;
     });
     </script>
-
-    <!-- Enigma AI Chatbot -->
-    <div class="chatbot-container">
-        <div class="chatbot-button" id="chatbotButton">
-            <img src="chatbot-icon.png" alt="Enigma AI Assistant" class="chatbot-icon">
-            <span class="chatbot-version">Enigma AI v1.0 "Nexus"</span>
-        </div>
-        <div class="chatbot-window" id="chatbotWindow">
-            <div class="chatbot-header">
-                <div class="chatbot-title">
-                    <img src="chatbot-icon.png" alt="Enigma AI Assistant" class="chatbot-icon-small">
-                    <span>Enigma AI v1.0 "Nexus"</span>
-                </div>
-                <button class="close-button" id="closeChatbot">×</button>
-            </div>
-            <div class="chatbot-messages" id="chatbotMessages">
-                <div class="message bot">
-                    <div class="message-content">
-                        Hello! I'm Nexus, your Enigma AI assistant. How can I help you today?
-                    </div>
-                </div>
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="userInput" placeholder="Type your message...">
-                <button id="sendMessage">Send</button>
-            </div>
-        </div>
-    </div>
-
     <style>
-        .chatbot-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: url('Hologram Globe.png') no-repeat center top fixed, linear-gradient(120deg, rgba(15,32,39,0.95), rgba(44,83,100,0.92));
+            background-size: cover, 100% 100%;
+            color: #f4f4f4;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
-
-        .chatbot-button {
-            background: linear-gradient(135deg, #00ffe7, #00b8ff);
-            border-radius: 50px;
-            padding: 12px 28px;
+        .hero {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 255, 231, 0.3);
-            transition: transform 0.3s ease;
+            justify-content: center;
+            padding: 4rem 2rem 2rem 2rem;
+            gap: 3rem;
+            background: transparent;
+            min-height: 60vh;
+            position: relative;
+            overflow: hidden;
         }
-
-        .chatbot-button:hover {
-            transform: scale(1.05);
-        }
-
-        .chatbot-icon {
-            width: 48px;
-            height: 48px;
-            filter: drop-shadow(0 0 5px rgba(0, 255, 231, 0.5));
-        }
-
-        .chatbot-version {
-            color: white;
-            font-weight: 500;
-            text-shadow: 0 0 10px rgba(0, 255, 231, 0.5);
-        }
-
-        .chatbot-window {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            width: 350px;
-            height: 500px;
-            background: rgba(15, 15, 20, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 255, 231, 0.2);
-            display: none;
-            flex-direction: column;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 231, 0.2);
-        }
-
-        .chatbot-header {
-            padding: 15px;
-            background: rgba(0, 255, 231, 0.1);
-            border-radius: 15px 15px 0 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chatbot-title {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            color: #00ffe7;
-            font-weight: 500;
-        }
-
-        .chatbot-icon-small {
-            width: 36px;
-            height: 36px;
-            filter: drop-shadow(0 0 5px rgba(0, 255, 231, 0.5));
-        }
-
-        .close-button {
-            background: none;
-            border: none;
-            color: #00ffe7;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 0 5px;
-        }
-
-        .chatbot-messages {
-            flex-grow: 1;
-            padding: 15px;
-            overflow-y: auto;
+        .hero-visuals {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            align-items: center;
+            gap: 1.5rem;
         }
-
-        .message {
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 15px;
-            animation: messageAppear 0.3s ease;
+        .hero-img {
+            width: 420px;
+            max-width: 50vw;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0,255,231,0.15);
+            animation: float 3s ease-in-out infinite;
+            z-index: 1;
+            position: relative;
         }
-
-        .message.bot {
-            align-self: flex-start;
-            background: rgba(0, 255, 231, 0.1);
-            border: 1px solid rgba(0, 255, 231, 0.2);
-            color: #00ffe7;
-        }
-
-        .message.user {
-            align-self: flex-end;
-            background: rgba(0, 184, 255, 0.1);
-            border: 1px solid rgba(0, 184, 255, 0.2);
-            color: #00b8ff;
-        }
-
-        .chatbot-input {
-            padding: 15px;
+        .hero-content {
+            max-width: 540px;
+            background: rgba(20, 30, 48, 0.92);
+            padding: 2.5rem 2.5rem 2rem 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 24px rgba(0,255,231,0.08);
+            animation: fadeIn 1.5s;
+            z-index: 1;
             display: flex;
-            gap: 10px;
-            border-top: 1px solid rgba(0, 255, 231, 0.2);
+            flex-direction: column;
+            align-items: flex-start;
         }
-
-        .chatbot-input input {
-            flex-grow: 1;
-            padding: 10px 15px;
-            border-radius: 25px;
-            border: 1px solid rgba(0, 255, 231, 0.2);
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            outline: none;
+        .hero-content h1 {
+            font-size: 3.2rem;
+            color: #00ffe7;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px #00ffe7, 0 0 32px #00ffe7;
         }
-
-        .chatbot-input button {
-            padding: 10px 20px;
-            border-radius: 25px;
-            border: none;
+        .hero-content h2 {
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+            text-shadow: 0 0 12px #00ffe7, 0 0 32px #00ffe7;
+        }
+        .hero-content .summary {
+            margin-top: 1.2rem;
+            font-size: 1.18rem;
+            color: #b2fff7;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .hero-cta {
+            display: flex;
+            gap: 1.2rem;
+        }
+        .cta-btn {
             background: linear-gradient(135deg, #00ffe7, #00b8ff);
-            color: white;
-            cursor: pointer;
-            transition: transform 0.2s ease;
+            color: #fff;
+            padding: 0.9em 2.2em;
+            border-radius: 2em;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(0,255,231,0.18);
+            transition: background 0.3s, transform 0.2s;
         }
-
-        .chatbot-input button:hover {
-            transform: scale(1.05);
+        .cta-btn:hover {
+            background: linear-gradient(135deg, #00b8ff, #00ffe7);
+            transform: translateY(-2px) scale(1.04);
         }
-
-        @keyframes messageAppear {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
+        .cta-btn.secondary {
+            background: rgba(0,255,231,0.12);
+            color: #00ffe7;
+            border: 1.5px solid #00ffe7;
+        }
+        .cta-btn.secondary:hover {
+            background: #00ffe7;
+            color: #181c24;
+        }
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 2.5rem 1rem 1rem 1rem;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .hero-img {
+                width: 90vw;
+                max-width: 95vw;
+            }
+            .hero-content {
+                padding: 1.5rem 1.2rem 1.2rem 1.2rem;
             }
         }
     </style>
-
-    <script>
-        // Chatbot functionality
-        const chatbotButton = document.getElementById('chatbotButton');
-        const chatbotWindow = document.getElementById('chatbotWindow');
-        const closeChatbot = document.getElementById('closeChatbot');
-        const sendMessage = document.getElementById('sendMessage');
-        const userInput = document.getElementById('userInput');
-        const chatbotMessages = document.getElementById('chatbotMessages');
-
-        chatbotButton.addEventListener('click', () => {
-            chatbotWindow.style.display = 'flex';
-        });
-
-        closeChatbot.addEventListener('click', () => {
-            chatbotWindow.style.display = 'none';
-        });
-
-        function addMessage(message, isUser = false) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
-            messageDiv.innerHTML = `<div class="message-content">${message}</div>`;
-            chatbotMessages.appendChild(messageDiv);
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-        }
-
-        function handleUserMessage() {
-            const message = userInput.value.trim();
-            if (message) {
-                addMessage(message, true);
-                userInput.value = '';
-
-                // Call your backend
-                fetch('http://localhost:3001/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message })
-                })
-                .then(res => res.json())
-                .then(data => {
-                    addMessage(data.reply);
-                })
-                .catch(() => {
-                    addMessage("Sorry, I'm having trouble right now.");
-                });
-            }
-        }
-
-        sendMessage.addEventListener('click', handleUserMessage);
-        userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                handleUserMessage();
-            }
-        });
-    </script>
 </body>
 </html> 
