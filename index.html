@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <img src="Hologram Globe.png" alt="Hologram Globe" class="corner-holo-globe">
+    <div id="bg-animated-network"></div>
     <nav class="navbar">
         <div class="logo">
             <img src="logo.png" alt="Enigma AI Logo" height="40">
@@ -26,7 +28,12 @@
         </ul>
     </nav>
     <header class="hero">
-        <img src="robotic_hand.png" alt="Robotic Hand AI" class="hero-img">
+        <div style="position:relative; display:inline-block;">
+            <img src="robotic_hand.png" alt="Robotic Hand AI" class="hero-img">
+            <div class="scanline-overlay"></div>
+            <img src="Hologram Triangle.gif" alt="Hologram Triangle" class="holo-triangle">
+            <img src="Hologram Landscape.gif" alt="Hologram Landscape" class="holo-landscape">
+        </div>
         <div class="hero-content">
             <h1>Enigma AI</h1>
             <h2>Research Proposal for AI Organizations</h2>
@@ -37,5 +44,314 @@
     <footer>
         &copy; 2024 Enigma AI – University of Huddersfield
     </footer>
+    <img src="Hologram Landscape.gif" alt="Hologram Landscape" class="footer-holo-landscape">
+    <script>
+    const canvas = document.createElement('canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.width = '100vw';
+    canvas.style.height = '100vh';
+    canvas.style.position = 'fixed';
+    canvas.style.top = 0;
+    canvas.style.left = 0;
+    canvas.style.zIndex = 0;
+    canvas.style.pointerEvents = 'none';
+    document.getElementById('bg-animated-network').appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    let nodes = [];
+    const NODE_COUNT = 60;
+    for (let i = 0; i < NODE_COUNT; i++) {
+      nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.7,
+        vy: (Math.random() - 0.5) * 0.7
+      });
+    }
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Draw glowing lines
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          let dx = nodes[i].x - nodes[j].x;
+          let dy = nodes[i].y - nodes[j].y;
+          let dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 180) {
+            ctx.save();
+            ctx.strokeStyle = 'rgba(0,255,231,' + (0.8 - dist / 200) + ')';
+            ctx.shadowColor = '#00ffe7';
+            ctx.shadowBlur = 18;
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+            ctx.restore();
+          }
+        }
+      }
+      // Draw glowing nodes
+      for (let node of nodes) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, 6, 0, 2 * Math.PI);
+        ctx.fillStyle = '#00ffe7';
+        ctx.shadowColor = '#00ffe7';
+        ctx.shadowBlur = 24;
+        ctx.fill();
+        ctx.restore();
+        node.x += node.vx;
+        node.y += node.vy;
+        if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+        if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+    </script>
+
+    <!-- Enigma AI Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-button" id="chatbotButton">
+            <img src="chatbot-icon.png" alt="Enigma AI Assistant" class="chatbot-icon">
+            <span class="chatbot-version">Enigma AI v1.0 "Nexus"</span>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <img src="chatbot-icon.png" alt="Enigma AI Assistant" class="chatbot-icon-small">
+                    <span>Enigma AI v1.0 "Nexus"</span>
+                </div>
+                <button class="close-button" id="closeChatbot">×</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    <div class="message-content">
+                        Hello! I'm Nexus, your Enigma AI assistant. How can I help you today?
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Type your message...">
+                <button id="sendMessage">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .chatbot-button {
+            background: linear-gradient(135deg, #00ffe7, #00b8ff);
+            border-radius: 50px;
+            padding: 12px 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 255, 231, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.05);
+        }
+
+        .chatbot-icon {
+            width: 48px;
+            height: 48px;
+            filter: drop-shadow(0 0 5px rgba(0, 255, 231, 0.5));
+        }
+
+        .chatbot-version {
+            color: white;
+            font-weight: 500;
+            text-shadow: 0 0 10px rgba(0, 255, 231, 0.5);
+        }
+
+        .chatbot-window {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: rgba(15, 15, 20, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 231, 0.2);
+            display: none;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 231, 0.2);
+        }
+
+        .chatbot-header {
+            padding: 15px;
+            background: rgba(0, 255, 231, 0.1);
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-title {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: #00ffe7;
+            font-weight: 500;
+        }
+
+        .chatbot-icon-small {
+            width: 36px;
+            height: 36px;
+            filter: drop-shadow(0 0 5px rgba(0, 255, 231, 0.5));
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            color: #00ffe7;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
+        .chatbot-messages {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            animation: messageAppear 0.3s ease;
+        }
+
+        .message.bot {
+            align-self: flex-start;
+            background: rgba(0, 255, 231, 0.1);
+            border: 1px solid rgba(0, 255, 231, 0.2);
+            color: #00ffe7;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: rgba(0, 184, 255, 0.1);
+            border: 1px solid rgba(0, 184, 255, 0.2);
+            color: #00b8ff;
+        }
+
+        .chatbot-input {
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            border-top: 1px solid rgba(0, 255, 231, 0.2);
+        }
+
+        .chatbot-input input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border-radius: 25px;
+            border: 1px solid rgba(0, 255, 231, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            outline: none;
+        }
+
+        .chatbot-input button {
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: none;
+            background: linear-gradient(135deg, #00ffe7, #00b8ff);
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .chatbot-input button:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes messageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <script>
+        // Chatbot functionality
+        const chatbotButton = document.getElementById('chatbotButton');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const closeChatbot = document.getElementById('closeChatbot');
+        const sendMessage = document.getElementById('sendMessage');
+        const userInput = document.getElementById('userInput');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+
+        chatbotButton.addEventListener('click', () => {
+            chatbotWindow.style.display = 'flex';
+        });
+
+        closeChatbot.addEventListener('click', () => {
+            chatbotWindow.style.display = 'none';
+        });
+
+        function addMessage(message, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            messageDiv.innerHTML = `<div class="message-content">${message}</div>`;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function handleUserMessage() {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                userInput.value = '';
+
+                // Call your backend
+                fetch('http://localhost:3001/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    addMessage(data.reply);
+                })
+                .catch(() => {
+                    addMessage("Sorry, I'm having trouble right now.");
+                });
+            }
+        }
+
+        sendMessage.addEventListener('click', handleUserMessage);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleUserMessage();
+            }
+        });
+    </script>
 </body>
 </html> 
