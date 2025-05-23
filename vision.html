@@ -34,9 +34,10 @@
 
     <main class="content-section">
         <div class="vision-hero">
-            <span class="section-badge">Vision & Objectives</span>
-            <h1 class="visually-hidden">Vision & Objectives</h1>
-            <p class="vision-subtitle">Shaping the Future of Ethical AI</p>
+            <div class="hero-badge-circle">
+                <span class="section-badge">Vision & Objectives</span>
+            </div>
+            <h1 class="hero-title">Shaping the Future of Ethical AI</h1>
         </div>
 
         <section class="vision-overview fade-in-on-scroll">
@@ -208,6 +209,38 @@
             font-size: 1.7rem;
         }
         .section-badge i { margin-right: 0.5em; }
+        .hero-badge-circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .hero-badge-circle .section-badge {
+            font-size: 1.3rem;
+            padding: 1.1em 2.8em;
+            border-radius: 50px;
+            box-shadow: 0 0 32px #00ffe7, 0 0 64px #00b8ff;
+        }
+        .hero-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #00ffe7;
+            text-align: center;
+            margin: 0 auto 2.5rem auto;
+            background: radial-gradient(circle, rgba(0,255,231,0.18) 60%, rgba(0,184,255,0.10) 100%);
+            border-radius: 50%;
+            width: 600px;
+            height: 220px;
+            box-shadow: 0 0 64px #00ffe7, 0 0 128px #00b8ff;
+            z-index: 2;
+            position: relative;
+        }
+        @media (max-width: 700px) {
+            .hero-title { width: 95vw; font-size: 1.5rem; height: 120px; }
+        }
     </style>
 </body>
 </html> 
