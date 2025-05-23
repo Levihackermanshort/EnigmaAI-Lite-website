@@ -33,11 +33,13 @@
     </nav>
     <main class="content-section">
         <div class="vision-hero">
-            <h1>Deployment Strategy</h1>
+            <span class="section-badge">Deployment Strategy</span>
+            <h1 class="visually-hidden">Deployment Strategy</h1>
             <p class="vision-subtitle">How Enigma AI Will Be Delivered and Supported</p>
         </div>
         <section class="fade-in-on-scroll">
             <div class="vision-content">
+                <span class="section-badge">Deployment</span>
                 <p class="vision-statement">Initial deployment will target local execution environments, followed by containerized Docker builds and optional cloud integrations. For academic and small-business applications, self-hosting and secure REST APIs will be supported. Long-term, Enigma AI may evolve into a platform-as-a-service (PaaS) with customizable modules.</p>
             </div>
         </section>
@@ -88,5 +90,29 @@
         }, { threshold: 0.2 });
         fadeEls.forEach(el => observer.observe(el));
     </script>
+    <style>
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00ffe7 60%, #00b8ff 100%);
+            color: #181c24;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 0 18px #00ffe7, 0 0 32px #00b8ff;
+            padding: 0.7em 2.2em;
+            margin-bottom: 1.2rem;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px #00ffe7;
+            position: relative;
+            z-index: 2;
+            animation: floatBadge 2.5s infinite alternate;
+        }
+        @keyframes floatBadge {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-7px); }
+        }
+        .visually-hidden { position: absolute; left: -9999px; }
+    </style>
 </body>
 </html> 

@@ -33,11 +33,13 @@
     </nav>
     <main class="content-section">
         <div class="vision-hero">
-            <h1>Methodology</h1>
+            <span class="section-badge">Methodology</span>
+            <h1 class="visually-hidden">Methodology</h1>
             <p class="vision-subtitle">How We Build, Test, and Evaluate Enigma AI</p>
         </div>
         <section class="fade-in-on-scroll">
             <div class="vision-content">
+                <span class="section-badge">Research Methods</span>
                 <ul class="vision-statement">
                     <li>Model fine-tuning with HuggingFace transformers</li>
                     <li>UI/UX development and testing with real users</li>
@@ -94,5 +96,29 @@
         }, { threshold: 0.2 });
         fadeEls.forEach(el => observer.observe(el));
     </script>
+    <style>
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00ffe7 60%, #00b8ff 100%);
+            color: #181c24;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 0 18px #00ffe7, 0 0 32px #00b8ff;
+            padding: 0.7em 2.2em;
+            margin-bottom: 1.2rem;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px #00ffe7;
+            position: relative;
+            z-index: 2;
+            animation: floatBadge 2.5s infinite alternate;
+        }
+        @keyframes floatBadge {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-7px); }
+        }
+        .visually-hidden { position: absolute; left: -9999px; }
+    </style>
 </body>
 </html> 

@@ -48,40 +48,44 @@
             </ul>
         </aside>
         <main class="content-section paper-content" style="max-width: 900px; margin: 2rem auto; background: rgba(20,30,48,0.92); padding: 2rem 2.5rem; border-radius: 1.5rem; box-shadow: 0 4px 24px rgba(0,255,231,0.08);">
-            <h1>Enigma AI: A Modular, Transparent, and Ethical Open-Domain AI Assistant</h1>
+            <div class="vision-hero">
+                <span class="section-badge">Research Paper</span>
+                <h1 class="visually-hidden">Enigma AI: A Modular, Transparent, and Ethical Open-Domain AI Assistant</h1>
+                <p class="vision-subtitle">Comprehensive Technical, Strategic, and Ethical Overview</p>
+            </div>
             <p><b>Author:</b> Zeyad Maeen<br>
             <b>Affiliation:</b> University of Huddersfield<br>
             <b>Academic Year:</b> 2024 – 2025</p>
             <hr>
-            <h2 id="executive-summary">Executive Summary</h2>
+            <span class="section-badge" id="executive-summary">Executive Summary</span>
             <p>Enigma AI is a next-generation, modular, open-domain AI assistant designed to address the growing need for transparency, efficiency, and flexibility in artificial intelligence systems. This research proposal presents a comprehensive technical, architectural, and strategic vision for Enigma AI, targeting both academic and industrial stakeholders. The project aims to integrate open-source large language models (LLMs) with custom, auditable modules, resulting in a controllable, privacy-aware conversational system. Enigma AI is positioned as a platform for ethical, user-centric AI development, experimentation, and deployment.</p>
-            <h2 id="vision-objectives">1. Vision and Objectives</h2>
-            <h3>Vision</h3>
+            <span class="section-badge" id="vision-objectives">1. Vision and Objectives</span>
+            <span class="section-badge">Vision</span>
             <p>To create a user-focused AI assistant that is not only powerful and adaptive but also transparent, ethical, and customizable. Enigma AI aspires to set a new standard for responsible AI by making its inner workings accessible and its outputs explainable.</p>
-            <h3>Objectives</h3>
+            <span class="section-badge">Objectives</span>
             <ul>
                 <li>Develop a modular AI assistant capable of domain-specific tasks and general conversation.</li>
                 <li>Ensure all components are open-source, auditable, and designed with privacy in mind.</li>
                 <li>Provide a flexible platform for testing adaptive user interfaces and personalized dialogue systems.</li>
                 <li>Advance research in efficient model inference, modular integration, and ethical AI deployment.</li>
             </ul>
-            <h2 id="background-motivation">2. Background and Motivation</h2>
+            <span class="section-badge" id="background-motivation">2. Background and Motivation</span>
             <p>Recent advances in LLMs such as GPT-4 and Claude have demonstrated remarkable capabilities in natural language understanding and generation. However, these models are often criticized for their opacity, high resource requirements, and lack of user control. Many are only available as cloud services, raising concerns about data privacy, reproducibility, and long-term accessibility.</p>
-            <h3>Motivation</h3>
+            <span class="section-badge">Motivation</span>
             <ul>
                 <li><b>Transparency:</b> Users and researchers should understand how decisions are made.</li>
                 <li><b>Control:</b> Organizations should be able to customize and audit their AI systems.</li>
                 <li><b>Privacy:</b> Sensitive data should remain local whenever possible.</li>
                 <li><b>Accessibility:</b> Academic and small business users should have access to state-of-the-art AI without prohibitive costs or technical barriers.</li>
             </ul>
-            <h2 id="research-questions">3. Research Questions</h2>
+            <span class="section-badge" id="research-questions">3. Research Questions</span>
             <ol>
                 <li><b>Integration:</b> How can fine-tuned open-source models be effectively integrated into a secure, customizable assistant framework?</li>
                 <li><b>Architecture Trade-offs:</b> What are the trade-offs between centralized cloud LLMs and locally deployable systems in terms of performance, privacy, and scalability?</li>
                 <li><b>Personalization vs. Privacy:</b> Can user personalization be achieved without compromising privacy, and what mechanisms best support this balance?</li>
                 <li><b>Evaluation Metrics:</b> What metrics most accurately reflect the quality of human-AI collaboration in domain-specific and general contexts?</li>
             </ol>
-            <h2 id="methodology">4. Methodology</h2>
+            <span class="section-badge" id="methodology">4. Methodology</span>
             <ul>
                 <li><b>Model Fine-Tuning:</b> Use HuggingFace Transformers to fine-tune LLMs on domain-specific datasets, optimizing for both accuracy and efficiency.</li>
                 <li><b>UI/UX Development:</b> Design and test adaptive, context-aware chat interfaces with real users, focusing on usability and satisfaction.</li>
@@ -89,7 +93,7 @@
                 <li><b>Performance Evaluation:</b> Benchmark the system using both standard datasets and custom tasks, measuring latency, accuracy, and resource usage.</li>
                 <li><b>Human-Subject Studies:</b> Conduct user studies to gather feedback on usability, trust, and perceived transparency.</li>
             </ul>
-            <h2 id="technical-architecture">5. Technical Architecture</h2>
+            <span class="section-badge" id="technical-architecture">5. Technical Architecture</span>
             <ul>
                 <li><b>Frontend:</b> HTML/CSS/JS-based chat interface with real-time feedback, context awareness, and interactive visualizations.</li>
                 <li><b>Backend:</b> Python (Flask/FastAPI) server orchestrating requests, managing modules, and handling user sessions.</li>
@@ -97,7 +101,7 @@
                 <li><b>Logging & Evaluation Layer:</b> Securely collects interaction data, with user control over what is logged and how it is used. Supports explainable output logs and GDPR compliance.</li>
             </ul>
             <p><b>Modularity:</b> Each component (tokenizer, router, scorer, etc.) is designed as a replaceable module, enabling rapid prototyping and research.</p>
-            <h2 id="deployment-strategy">6. Deployment Strategy</h2>
+            <span class="section-badge" id="deployment-strategy">6. Deployment Strategy</span>
             <ul>
                 <li><b>Local Execution:</b> Initial deployments will run on local machines, ensuring privacy and control.</li>
                 <li><b>Containerization:</b> Docker images will be provided for easy setup and reproducibility.</li>
@@ -105,20 +109,20 @@
                 <li><b>Self-Hosting:</b> Academic and small business users can self-host Enigma AI, maintaining full control over their data and models.</li>
                 <li><b>Platform-as-a-Service (Long-Term):</b> Enigma AI may evolve into a customizable PaaS, offering modular AI capabilities to a broader audience.</li>
             </ul>
-            <h2 id="ethical-considerations">7. Ethical Considerations</h2>
+            <span class="section-badge" id="ethical-considerations">7. Ethical Considerations</span>
             <ul>
                 <li><b>Data Privacy:</b> No data is retained unless explicitly permitted by the user. All logs are user-controlled and can be deleted at any time.</li>
                 <li><b>Explainability:</b> Every system response is accompanied by an explainable output log, detailing the reasoning and data sources.</li>
                 <li><b>Bias Mitigation:</b> Regular testing for bias at both the data and output stages, with mechanisms for user feedback and correction.</li>
                 <li><b>Compliance:</b> Full adherence to GDPR and academic research ethics standards.</li>
             </ul>
-            <h2 id="risk-analysis">8. Risk Analysis and Mitigation</h2>
+            <span class="section-badge" id="risk-analysis">8. Risk Analysis and Mitigation</span>
             <ul>
                 <li><b>Model Bias or Hallucinations:</b> Mitigated by an output validation layer and fallback to human input when confidence is low.</li>
                 <li><b>Infrastructure Bottlenecks:</b> Lightweight model fallback and quantization techniques will be used to ensure responsiveness.</li>
                 <li><b>Misuse in Harmful Contexts:</b> Content filtering and deployment restrictions will be implemented to prevent abuse.</li>
             </ul>
-            <h2 id="timeline">9. Timeline and Milestones</h2>
+            <span class="section-badge" id="timeline">9. Timeline and Milestones</span>
             <ul>
                 <li>Q2 2024: Initial prototype, UI/UX testing</li>
                 <li>Q3 2024: Backend integration, model experiments</li>
@@ -126,14 +130,14 @@
                 <li>Q1 2025: Deployment of version 1.0 for academic users</li>
                 <li>Q2 2025: Feedback collection and model retraining</li>
             </ul>
-            <h2 id="collaborations">10. Potential Collaborations</h2>
+            <span class="section-badge" id="collaborations">10. Potential Collaborations</span>
             <ul>
                 <li><b>Universities:</b> For student-driven testing, interface feedback, and academic research.</li>
                 <li><b>AI Organizations:</b> For joint development, ethical review, and technology transfer.</li>
                 <li><b>Open-Source Communities:</b> For LLM integration, benchmarking, and collaborative improvement.</li>
                 <li><b>Policy Researchers:</b> For alignment with AI governance and regulatory standards.</li>
             </ul>
-            <h2 id="conclusion">Conclusion</h2>
+            <span class="section-badge" id="conclusion">Conclusion</span>
             <p>Enigma AI is a forward-looking research and engineering project that merges conversational AI capabilities with ethical transparency and design flexibility. By fostering collaboration and prioritizing user-centric design, Enigma AI aims to become a model for sustainable, responsible, and accessible AI systems.</p>
         </main>
     </div>
@@ -241,6 +245,28 @@
             .paper-container { flex-direction: column; }
             .toc-sidebar { position: static; width: 100%; margin-bottom: 2rem; }
         }
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00ffe7 60%, #00b8ff 100%);
+            color: #181c24;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 0 18px #00ffe7, 0 0 32px #00b8ff;
+            padding: 0.7em 2.2em;
+            margin-bottom: 1.2rem;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px #00ffe7;
+            position: relative;
+            z-index: 2;
+            animation: floatBadge 2.5s infinite alternate;
+        }
+        @keyframes floatBadge {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-7px); }
+        }
+        .visually-hidden { position: absolute; left: -9999px; }
     </style>
 </body>
 </html> 

@@ -33,19 +33,20 @@
     </nav>
     <main class="content-section">
         <div class="vision-hero">
-            <h1>Ethics & Risk</h1>
+            <span class="section-badge">Ethics & Risk</span>
+            <h1 class="visually-hidden">Ethics & Risk</h1>
             <p class="vision-subtitle">Ensuring Responsible and Safe AI Deployment</p>
         </div>
         <section class="fade-in-on-scroll">
             <div class="vision-content">
-                <h2>Ethical Considerations</h2>
+                <span class="section-badge">Ethical Considerations</span>
                 <ul class="vision-statement">
                     <li>Avoiding data retention unless explicitly permitted by the user</li>
                     <li>Including explainable output logs for all system responses</li>
                     <li>Bias testing and mitigation at both data and output stages</li>
                     <li>Full compliance with GDPR and academic research ethics standards</li>
                 </ul>
-                <h2>Risk Analysis & Mitigation</h2>
+                <span class="section-badge">Risk Analysis & Mitigation</span>
                 <ul class="vision-statement">
                     <li><b>Risk:</b> Model bias or hallucinations<br><b>Mitigation:</b> Output validation layer and fallback to human input</li>
                     <li><b>Risk:</b> Infrastructure performance bottlenecks<br><b>Mitigation:</b> Lightweight model fallback and quantization</li>
@@ -100,5 +101,29 @@
         }, { threshold: 0.2 });
         fadeEls.forEach(el => observer.observe(el));
     </script>
+    <style>
+    .section-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #00ffe7 60%, #00b8ff 100%);
+        color: #181c24;
+        font-weight: 700;
+        font-size: 1.2rem;
+        border-radius: 50px;
+        box-shadow: 0 0 18px #00ffe7, 0 0 32px #00b8ff;
+        padding: 0.7em 2.2em;
+        margin-bottom: 1.2rem;
+        margin-top: 0.5rem;
+        letter-spacing: 1px;
+        text-shadow: 0 0 8px #00ffe7;
+        position: relative;
+        z-index: 2;
+        animation: floatBadge 2.5s infinite alternate;
+    }
+    @keyframes floatBadge {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-7px); }
+    }
+    .visually-hidden { position: absolute; left: -9999px; }
+    </style>
 </body>
 </html> 
