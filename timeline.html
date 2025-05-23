@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://enigmaai-lite.org/">
     <title>Timeline & Collaborations - Enigma AI</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Enigma AI Logo" height="40">
+            <img src="/logo.png" alt="Enigma AI Logo" height="40">
             <span>Enigma AI</span>
         </div>
         <ul class="nav-links">
@@ -24,31 +27,115 @@
             <li><a href="timeline.html">Timeline</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="navbar-actions">
+            <button id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
+        </div>
     </nav>
     <main class="content-section">
-        <h1>Timeline & Collaborations</h1>
-        <section>
-            <h2>Timeline & Milestones</h2>
-            <ul>
-                <li>Q2 2024: Initial prototype, UI/UX testing</li>
-                <li>Q3 2024: Backend integration, model experiments</li>
-                <li>Q4 2024: Evaluation and academic paper submission</li>
-                <li>Q1 2025: Deployment of version 1.0 for academic users</li>
-                <li>Q2 2025: Feedback collection and model retraining</li>
-            </ul>
+        <div class="vision-hero">
+            <h1>Timeline & Collaborations</h1>
+            <p class="vision-subtitle">Project Milestones and Key Partnerships</p>
+        </div>
+        <section class="fade-in-on-scroll">
+            <div class="vision-content">
+                <h2>Timeline & Milestones</h2>
+                <div class="timeline-grid">
+                    <div class="timeline-item"><span class="timeline-dot"></span><b>Q2 2024:</b> Initial prototype, UI/UX testing</div>
+                    <div class="timeline-item"><span class="timeline-dot"></span><b>Q3 2024:</b> Backend integration, model experiments</div>
+                    <div class="timeline-item"><span class="timeline-dot"></span><b>Q4 2024:</b> Evaluation and academic paper submission</div>
+                    <div class="timeline-item"><span class="timeline-dot"></span><b>Q1 2025:</b> Deployment of version 1.0 for academic users</div>
+                    <div class="timeline-item"><span class="timeline-dot"></span><b>Q2 2025:</b> Feedback collection and model retraining</div>
+                </div>
+            </div>
         </section>
-        <section>
-            <h2>Potential Collaborations</h2>
-            <ul>
-                <li>Universities for student-driven testing and interface feedback</li>
-                <li>AI organizations for joint development and ethical review</li>
-                <li>Open-source model communities for LLM integration</li>
-                <li>Policy researchers for AI governance alignment</li>
-            </ul>
+        <section class="fade-in-on-scroll">
+            <div class="vision-content">
+                <h2>Potential Collaborations</h2>
+                <div class="objectives-grid">
+                    <div class="objective-card"><i class="fas fa-university objective-icon"></i><h3>Universities</h3><p>Student-driven testing and interface feedback</p></div>
+                    <div class="objective-card"><i class="fas fa-robot objective-icon"></i><h3>AI Organizations</h3><p>Joint development and ethical review</p></div>
+                    <div class="objective-card"><i class="fas fa-code-branch objective-icon"></i><h3>Open-Source Communities</h3><p>LLM integration and benchmarking</p></div>
+                    <div class="objective-card"><i class="fas fa-balance-scale objective-icon"></i><h3>Policy Researchers</h3><p>AI governance alignment</p></div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-        &copy; 2024 Enigma AI – University of Huddersfield
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Enigma AI</h3>
+                <p>Advancing the future of artificial intelligence through ethical research and innovation.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Enigma AI – University of Huddersfield
+        </div>
     </footer>
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode') ? 
+                '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+        // Fade-in animation on scroll
+        const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        fadeEls.forEach(el => observer.observe(el));
+    </script>
+    <style>
+        .timeline-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            border-left: 3px solid #00ffe7;
+            padding-left: 2rem;
+        }
+        .timeline-item {
+            position: relative;
+            font-size: 1.15rem;
+            color: #b2fff7;
+            padding-left: 1.5rem;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -2.1rem;
+            top: 0.3rem;
+            width: 1.1rem;
+            height: 1.1rem;
+            background: #00ffe7;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #00ffe7, 0 0 32px #00ffe7;
+            animation: pulseDot 1.5s infinite alternate;
+        }
+        @keyframes pulseDot {
+            0% { box-shadow: 0 0 8px #00ffe7, 0 0 0 #00ffe7; }
+            100% { box-shadow: 0 0 24px #00ffe7, 0 0 16px #00ffe7; }
+        }
+    </style>
 </body>
 </html> 

@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://enigmaai-lite.org/">
     <title>Contact & About - Enigma AI</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Enigma AI Logo" height="40">
+            <img src="/logo.png" alt="Enigma AI Logo" height="40">
             <span>Enigma AI</span>
         </div>
         <ul class="nav-links">
@@ -24,23 +27,161 @@
             <li><a href="timeline.html">Timeline</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="navbar-actions">
+            <button id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
+        </div>
     </nav>
     <main class="content-section">
-        <h1>Contact & About</h1>
-        <section>
-            <h2>Contact</h2>
-            <p>For academic or collaboration inquiries, please contact:<br>
-            <b>Zeyad Maeen</b><br>
-            Affiliation: University of Huddersfield<br>
-            Email: <a href="mailto:zeyadmaeen@email.com">zeyadmaeen@email.com</a></p>
+        <div class="vision-hero">
+            <h1>Contact & About</h1>
+            <p class="vision-subtitle">Get in Touch or Learn More About Enigma AI</p>
+        </div>
+        <section class="fade-in-on-scroll">
+            <div class="vision-content">
+                <h2>Contact</h2>
+                <p>For academic or collaboration inquiries, please contact:<br>
+                <b>Zeyad Maeen</b><br>
+                Affiliation: University of Huddersfield<br>
+                Email: <a href="mailto:zeyadmaeen@email.com">zeyadmaeen@email.com</a></p>
+            </div>
         </section>
-        <section>
-            <h2>About the Project</h2>
-            <p>Enigma AI is a forward-looking research and engineering project that merges conversational AI capabilities with ethical transparency and design flexibility. With the right collaborations, it can become a model for sustainable, user-centric AI systems.</p>
+        <section class="fade-in-on-scroll">
+            <div class="vision-content">
+                <h2>About the Project</h2>
+                <p>Enigma AI is a forward-looking research and engineering project that merges conversational AI capabilities with ethical transparency and design flexibility. With the right collaborations, it can become a model for sustainable, user-centric AI systems.</p>
+            </div>
+        </section>
+        <section class="fade-in-on-scroll">
+            <div class="vision-content">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">What is Enigma AI and how is it different from other AI assistants?</button>
+                        <div class="faq-answer">Enigma AI is a modular, open-domain AI assistant focused on transparency, ethical design, and user privacy. Unlike many commercial AIs, it is designed for local deployment, academic research, and full user control.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How does Enigma AI ensure user privacy?</button>
+                        <div class="faq-answer">Enigma AI does not retain user data unless explicitly permitted. All logs are user-controlled and can be deleted at any time. Privacy is a core design principle.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Can I run Enigma AI locally or does it require the cloud?</button>
+                        <div class="faq-answer">You can run Enigma AI locally on your own hardware, ensuring full control and privacy. Cloud deployment is optional for those who need scalability.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What models does Enigma AI support?</button>
+                        <div class="faq-answer">Enigma AI is designed to integrate with open-source LLMs such as Mistral-7B, GPT-J, and fine-tuned LLaMA, with a plug-and-play architecture for easy model swapping.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How can I contribute or collaborate?</button>
+                        <div class="faq-answer">You can contribute via GitHub or contact the project lead for academic or industry collaborations. Open-source contributions and feedback are welcome!</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What are the ethical considerations for using LLMs?</button>
+                        <div class="faq-answer">Ethical considerations include privacy, bias mitigation, explainability, and compliance with regulations like GDPR. Enigma AI is built with these in mind.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How does Enigma AI handle bias and explainability?</button>
+                        <div class="faq-answer">The system includes bias testing, explainable output logs, and user feedback mechanisms to ensure responsible and transparent AI behavior.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Is Enigma AI open source?</button>
+                        <div class="faq-answer">Yes, Enigma AI is open source and encourages community contributions and transparency in development.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Who can use Enigma AI?</button>
+                        <div class="faq-answer">Enigma AI is intended for researchers, students, developers, and organizations interested in ethical, user-centric AI systems.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do I get support or report issues?</button>
+                        <div class="faq-answer">You can open an issue on GitHub or contact the project lead via email for support or to report bugs and suggestions.</div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-        &copy; 2024 Enigma AI – University of Huddersfield
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Enigma AI</h3>
+                <p>Advancing the future of artificial intelligence through ethical research and innovation.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Enigma AI – University of Huddersfield
+        </div>
     </footer>
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode') ? 
+                '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+        // Fade-in animation on scroll
+        const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        fadeEls.forEach(el => observer.observe(el));
+        // FAQ expand/collapse
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+    <style>
+        .faq-list { margin-top: 2rem; }
+        .faq-item { margin-bottom: 1.2rem; }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: rgba(0,255,231,0.08);
+            color: #00ffe7;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 1rem 1.2rem;
+            border-radius: 0.7rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .faq-question.active, .faq-question:hover {
+            background: #00ffe7;
+            color: #181c24;
+        }
+        .faq-answer {
+            display: none;
+            background: rgba(20,30,48,0.92);
+            color: #b2fff7;
+            padding: 1rem 1.2rem;
+            border-radius: 0.7rem;
+            margin-top: 0.2rem;
+            font-size: 1rem;
+        }
+    </style>
 </body>
 </html> 
