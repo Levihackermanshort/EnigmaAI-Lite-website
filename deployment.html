@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://enigmaai-lite.org/">
     <title>Deployment Strategy - Enigma AI</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Enigma AI Logo" height="40">
+            <img src="/logo.png" alt="Enigma AI Logo" height="40">
             <span>Enigma AI</span>
         </div>
         <ul class="nav-links">
@@ -24,13 +27,66 @@
             <li><a href="timeline.html">Timeline</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="navbar-actions">
+            <button id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
+        </div>
     </nav>
     <main class="content-section">
-        <h1>Deployment Strategy</h1>
-        <p>Initial deployment will target local execution environments, followed by containerized Docker builds and optional cloud integrations. For academic and small-business applications, self-hosting and secure REST APIs will be supported. Long-term, Enigma AI may evolve into a platform-as-a-service (PaaS) with customizable modules.</p>
+        <div class="vision-hero">
+            <h1>Deployment Strategy</h1>
+            <p class="vision-subtitle">How Enigma AI Will Be Delivered and Supported</p>
+        </div>
+        <section class="fade-in-on-scroll">
+            <div class="vision-content">
+                <p class="vision-statement">Initial deployment will target local execution environments, followed by containerized Docker builds and optional cloud integrations. For academic and small-business applications, self-hosting and secure REST APIs will be supported. Long-term, Enigma AI may evolve into a platform-as-a-service (PaaS) with customizable modules.</p>
+            </div>
+        </section>
     </main>
     <footer>
-        &copy; 2024 Enigma AI – University of Huddersfield
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Enigma AI</h3>
+                <p>Advancing the future of artificial intelligence through ethical research and innovation.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Enigma AI – University of Huddersfield
+        </div>
     </footer>
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode') ? 
+                '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+        // Fade-in animation on scroll
+        const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        fadeEls.forEach(el => observer.observe(el));
+    </script>
 </body>
 </html> 
