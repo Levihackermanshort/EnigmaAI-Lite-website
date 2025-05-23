@@ -4,77 +4,138 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Background & Motivation - Enigma AI</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Assuming you use a shared stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
+    .section-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #00ffe7 60%, #00b8ff 100%);
+      color: #181c24;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      box-shadow: 0 0 18px #00ffe7, 0 0 32px #00b8ff;
+      padding: 0.7em 2.2em;
+      margin-bottom: 1.2rem;
+      margin-top: 0.5rem;
+      letter-spacing: 1px;
+      text-shadow: 0 0 8px #00ffe7;
+      position: relative;
+      z-index: 2;
+      animation: floatBadge 2.5s infinite alternate;
     }
-
-    header, footer {
-      background-color: #1a1a1a;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
+    @keyframes floatBadge {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-7px); }
     }
-
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 8px;
-    }
-
-    h1, h2 {
-      color: #2c3e50;
-    }
-
-    h2 {
-      margin-top: 2rem;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    ul li {
+    .section-badge i { margin-right: 0.5em; }
+    .vision-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2.5rem;
       margin-bottom: 0.5rem;
+    }
+    .hero-badge-circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+    .hero-badge-circle .section-badge {
+      font-size: 1.3rem;
+      padding: 1.1em 2.8em;
+      border-radius: 50px;
+      box-shadow: 0 0 32px #00ffe7, 0 0 64px #00b8ff;
+    }
+    .hero-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #00ffe7;
+      text-align: center;
+      margin: 0 auto 1.2rem auto;
+      background: radial-gradient(circle, rgba(0,255,231,0.18) 60%, rgba(0,184,255,0.10) 100%);
+      border-radius: 50%;
+      width: 420px;
+      height: 120px;
+      box-shadow: 0 0 48px #00ffe7, 0 0 96px #00b8ff;
+      z-index: 2;
+      position: relative;
+    }
+    @media (max-width: 700px) {
+      .hero-title { width: 95vw; font-size: 1.2rem; height: 80px; }
+    }
+    .vision-content {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(20,30,48,0.92);
+      padding: 2.2rem 2.5rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,255,231,0.08);
+      color: #eafffa;
+      font-size: 1.18rem;
+    }
+    .vision-content ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .vision-content ul li {
+      margin-bottom: 0.7rem;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Enigma AI</h1>
-    <p>Background & Motivation</p>
-  </header>
-
-  <div class="container">
-    <h2>The Need for Ethical AI</h2>
-    <p>In an era where artificial intelligence is increasingly integrated into daily life, ensuring that these systems operate ethically and transparently is paramount. The rapid advancement of AI technologies presents both opportunities and challenges, necessitating a framework that prioritizes user privacy, fairness, and accountability.</p>
-
-    <h2>Bridging the Gap Between Innovation and Responsibility</h2>
-    <p>While AI offers transformative potential across various sectors, there exists a critical need to align technological innovation with ethical considerations. Enigma AI is committed to developing AI solutions that not only push the boundaries of what's possible but also adhere to stringent ethical standards, ensuring that progress does not come at the expense of societal values.</p>
-
-    <h2>Our Commitment</h2>
-    <ul>
-      <li><strong>Transparency</strong>: Ensuring that AI decision-making processes are understandable and explainable to users.</li>
-      <li><strong>User-Centric Design</strong>: Placing user needs and experiences at the forefront of AI development.</li>
-      <li><strong>Ethical Standards</strong>: Implementing robust guidelines to govern AI behavior, safeguarding against biases and unintended consequences.</li>
-      <li><strong>Collaboration</strong>: Engaging with academic, industry, and public stakeholders to foster a holistic approach to ethical AI.</li>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Enigma AI Logo" height="40">
+      <span>Enigma AI</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="vision.html">Vision</a></li>
+      <li><a href="background.html">Background</a></li>
+      <li><a href="questions.html">Research Questions</a></li>
+      <li><a href="methodology.html">Methodology</a></li>
+      <li><a href="architecture.html">Architecture</a></li>
+      <li><a href="deployment.html">Deployment</a></li>
+      <li><a href="ethics.html">Ethics & Risk</a></li>
+      <li><a href="timeline.html">Timeline</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
+  </nav>
+  <main class="content-section">
+    <div class="vision-hero">
+      <div class="hero-badge-circle">
+        <span class="section-badge"><i class="fas fa-history"></i> Background & Motivation</span>
+      </div>
+      <h1 class="hero-title">Background & Motivation</h1>
+    </div>
+    <section class="fade-in-on-scroll" style="margin-top: 2.5rem;">
+      <div class="vision-content">
+        <span class="section-badge"><i class="fas fa-lightbulb"></i> The Need for Ethical AI</span>
+        <p>In an era where artificial intelligence is increasingly integrated into daily life, ensuring that these systems operate ethically and transparently is paramount. The rapid advancement of AI technologies presents both opportunities and challenges, necessitating a framework that prioritizes user privacy, fairness, and accountability.</p>
 
-    <p>By intertwining cutting-edge research with a steadfast commitment to ethics, Enigma AI aims to set a precedent for responsible AI development and deployment.</p>
-  </div>
+        <span class="section-badge"><i class="fas fa-bridge"></i> Bridging the Gap Between Innovation and Responsibility</span>
+        <p>While AI offers transformative potential across various sectors, there exists a critical need to align technological innovation with ethical considerations. Enigma AI is committed to developing AI solutions that not only push the boundaries of what's possible but also adhere to stringent ethical standards, ensuring that progress does not come at the expense of societal values.</p>
 
+        <span class="section-badge"><i class="fas fa-handshake"></i> Our Commitment</span>
+        <ul>
+          <li><strong>Transparency</strong>: Ensuring that AI decision-making processes are understandable and explainable to users.</li>
+          <li><strong>User-Centric Design</strong>: Placing user needs and experiences at the forefront of AI development.</li>
+          <li><strong>Ethical Standards</strong>: Implementing robust guidelines to govern AI behavior, safeguarding against biases and unintended consequences.</li>
+          <li><strong>Collaboration</strong>: Engaging with academic, industry, and public stakeholders to foster a holistic approach to ethical AI.</li>
+        </ul>
+
+        <p>By intertwining cutting-edge research with a steadfast commitment to ethics, Enigma AI aims to set a precedent for responsible AI development and deployment.</p>
+      </div>
+    </section>
+  </main>
   <footer>
-    <p>© 2025 Enigma AI. All rights reserved.</p>
+    &copy; 2025 Enigma AI. All rights reserved.
   </footer>
-
 </body>
-</html>
+</html> 
