@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enigma AI - Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <img src="Hologram Globe.png" alt="Hologram Globe" class="corner-holo-globe" style="display:none;">
     <div id="bg-animated-network"></div>
+    <canvas id="ai-circuit-bg"></canvas>
     <nav class="navbar">
         <div class="logo">
             <img src="logo.png" alt="Enigma AI Logo" height="40">
@@ -26,14 +29,21 @@
             <li><a href="timeline.html">Timeline</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="navbar-actions">
+          <button id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
+        </div>
     </nav>
     <header class="hero">
         <div class="hero-visuals">
-            <img src="robotic_hand.png" alt="Robotic Hand AI" class="hero-img">
+            <img src="robotic_hand.png" alt="Robotic hand holding a glowing AI hologram" class="hero-img">
+            <div class="floating-elements">
+                <div class="hologram-element"><img src="Hologram Triangle.gif" alt="Animated hologram triangle" /></div>
+                <div class="hologram-element"><img src="Hologram Pointer.gif" alt="Animated hologram pointer" /></div>
+            </div>
         </div>
         <div class="hero-content">
             <h1>Enigma AI</h1>
-            <h2>Research Proposal for AI Organizations</h2>
+            <h2><span id="typing-subtitle"></span></h2>
             <p class="summary">Enigma AI is a modular, open-domain AI assistant designed to combine transparency, efficiency, and flexibility. Explore our vision for the future of ethical, user-centric AI.</p>
             <div class="hero-cta">
                 <a href="vision.html" class="cta-btn">Our Vision</a>
@@ -41,9 +51,150 @@
             </div>
         </div>
     </header>
+
+    <section class="features fade-in-on-scroll" aria-label="Key Features">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-brain"></i>
+                <h3>Advanced Neural Architecture</h3>
+                <p>State-of-the-art neural network design optimized for performance and efficiency.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Ethical Framework</h3>
+                <p>Built-in ethical guidelines and safety measures for responsible AI deployment.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Modular Design</h3>
+                <p>Flexible architecture allowing easy integration and customization.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Performance Metrics</h3>
+                <p>Comprehensive analytics and monitoring systems for optimal performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="research-overview fade-in-on-scroll" aria-label="Research Overview">
+        <h2 class="section-title">Research Overview</h2>
+        <div class="research-grid">
+            <div class="research-card">
+                <h3>Methodology</h3>
+                <p>Our research employs a combination of quantitative and qualitative methods, including:</p>
+                <ul>
+                    <li>Experimental validation</li>
+                    <li>User studies</li>
+                    <li>Performance benchmarking</li>
+                    <li>Ethical impact assessment</li>
+                </ul>
+                <a href="methodology.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="research-card">
+                <h3>Innovation</h3>
+                <p>Key innovations in our approach:</p>
+                <ul>
+                    <li>Novel neural architecture</li>
+                    <li>Advanced training methodologies</li>
+                    <li>Unique ethical framework</li>
+                    <li>Scalable deployment solutions</li>
+                </ul>
+                <a href="architecture.html" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section fade-in-on-scroll" aria-label="Call to Action">
+        <div class="cta-content">
+            <h2>Ready to Explore the Future of AI?</h2>
+            <p>Join us in shaping the next generation of artificial intelligence.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-btn">Get Started</a>
+                <a href="research-paper.html" class="cta-btn secondary">Read Full Paper</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        &copy; 2024 Enigma AI – University of Huddersfield
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Enigma AI</h3>
+                <p>Advancing the future of artificial intelligence through ethical research and innovation.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+                    <li><a href="#" id="terms-link">Terms of Use</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Enigma AI – University of Huddersfield
+        </div>
     </footer>
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal" aria-modal="true" role="dialog" tabindex="-1" style="display:none;">
+      <div class="modal-content">
+        <span class="close-modal" id="close-privacy">&times;</span>
+        <h2>Privacy Policy</h2>
+        <p>Your privacy is important to us. We do not collect personal data unless you contact us directly. For more information, contact our team.</p>
+      </div>
+    </div>
+    <!-- Terms Modal -->
+    <div id="terms-modal" class="modal" aria-modal="true" role="dialog" tabindex="-1" style="display:none;">
+      <div class="modal-content">
+        <span class="close-modal" id="close-terms">&times;</span>
+        <h2>Terms of Use</h2>
+        <p>This website is for informational and research purposes only. By using this site, you agree to our terms and conditions.</p>
+      </div>
+    </div>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <!-- Nexus AI Assistant Widget -->
+    <div id="nexusWidget" class="nexus-widget fixed right-10 bottom-10 w-[340px] max-w-[95vw] bg-[#141e30] bg-opacity-95 rounded-2xl shadow-2xl border-2 border-cyan-400 z-[4000] flex flex-col font-sans transition-all duration-200 overflow-hidden select-none" aria-label="Nexus AI Assistant" tabindex="0">
+      <div class="nexus-header flex items-center bg-cyan-400/10 px-4 py-2 cursor-move border-b border-cyan-400/20 select-none" data-draggable="true">
+        <div class="animated-avatar relative mr-3">
+          <span class="avatar-pulse absolute left-1/2 top-1/2 w-[60px] h-[60px] bg-cyan-400/20 rounded-full -translate-x-1/2 -translate-y-1/2 z-0 animate-pulse"></span>
+          <span class="nexus-logo-svg" aria-label="Nexus animated logo">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" stroke="#00ffe7" stroke-width="3" fill="none" opacity="0.7">
+                <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="3s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="24" cy="24" r="10" stroke="#00b8ff" stroke-width="2" fill="none" opacity="0.5">
+                <animateTransform attributeName="transform" type="rotate" from="360 24 24" to="0 24 24" dur="2.2s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="24" cy="24" r="4" fill="#00ffe7" opacity="0.9">
+                <animate attributeName="r" values="4;7;4" dur="1.8s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+          </span>
+        </div>
+        <div class="nexus-title font-bold text-cyan-400 text-lg tracking-wide drop-shadow-md flex-1">Nexus <span id="nexusMood"></span></div>
+        <button class="nexus-minimize bg-transparent border-none text-cyan-400 text-lg ml-2 hover:text-white focus:text-white transition-colors duration-150" aria-label="Minimize Nexus"><i class="fas fa-minus"></i></button>
+      </div>
+      <div id="nexusMessages" class="nexus-messages flex-1 p-4 overflow-y-auto bg-transparent max-h-[260px] min-h-[120px] text-base text-white"></div>
+      <div id="nexusTyping" class="nexus-typing flex items-center gap-2 px-4 py-2 text-cyan-400 text-base italic" style="display:none;">
+        <span class="dot inline-block w-2 h-2 bg-cyan-400 rounded-full mr-1 animate-bounce"></span><span class="dot inline-block w-2 h-2 bg-cyan-400 rounded-full mr-1 animate-bounce delay-200"></span><span class="dot inline-block w-2 h-2 bg-cyan-400 rounded-full mr-1 animate-bounce delay-400"></span> <span>Nexus is typing...</span>
+      </div>
+      <div class="nexus-input-row flex items-center px-4 pb-4 pt-2 bg-transparent border-t border-cyan-400/10">
+        <input id="nexusInput" type="text" placeholder="Ask Nexus anything..." autocomplete="off" aria-label="Type your message to Nexus" class="flex-1 rounded-full px-4 py-2 text-base bg-[#232b3b] text-white mr-3 outline-none focus:ring-2 focus:ring-cyan-400 transition-all" />
+        <button id="nexusSend" aria-label="Send message" class="bg-gradient-to-br from-cyan-300 to-cyan-500 text-white rounded-full w-10 h-10 flex items-center justify-center text-lg shadow-md hover:from-cyan-400 hover:to-cyan-600 focus:ring-2 focus:ring-cyan-400 transition-all"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
     <script>
     const canvas = document.createElement('canvas');
     canvas.width = window.innerWidth;
@@ -112,6 +263,120 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
+    // Dark/Light mode toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      themeToggle.innerHTML = document.body.classList.contains('light-mode') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+    // Fade-in on scroll
+    const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+    // Modal popups
+    const privacyLink = document.getElementById('privacy-link');
+    const termsLink = document.getElementById('terms-link');
+    const privacyModal = document.getElementById('privacy-modal');
+    const termsModal = document.getElementById('terms-modal');
+    const closePrivacy = document.getElementById('close-privacy');
+    const closeTerms = document.getElementById('close-terms');
+    privacyLink.onclick = () => { privacyModal.style.display = 'block'; };
+    termsLink.onclick = () => { termsModal.style.display = 'block'; };
+    closePrivacy.onclick = () => { privacyModal.style.display = 'none'; };
+    closeTerms.onclick = () => { termsModal.style.display = 'none'; };
+    window.onclick = (e) => {
+      if (e.target === privacyModal) privacyModal.style.display = 'none';
+      if (e.target === termsModal) termsModal.style.display = 'none';
+    };
+    // Typing animation for subtitle
+    const typingSubtitle = document.getElementById('typing-subtitle');
+    const subtitleText = 'Research Proposal for AI Organizations';
+    let typingIdx = 0;
+    function typeSubtitle() {
+      if (typingIdx <= subtitleText.length) {
+        typingSubtitle.textContent = subtitleText.slice(0, typingIdx);
+        typingIdx++;
+        setTimeout(typeSubtitle, 45);
+      }
+    }
+    typeSubtitle();
+    // Back to Top button
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    backToTop.onclick = () => { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+    </script>
+    <script>
+    // Animated AI Circuit/Neural Net Background
+    const circuitCanvas = document.getElementById('ai-circuit-bg');
+    if (circuitCanvas) {
+      function resizeCircuitCanvas() {
+        circuitCanvas.width = window.innerWidth;
+        circuitCanvas.height = window.innerHeight;
+      }
+      resizeCircuitCanvas();
+      window.addEventListener('resize', resizeCircuitCanvas);
+      const ctx = circuitCanvas.getContext('2d');
+      let nodes = [];
+      let lines = [];
+      const NODE_COUNT = 18;
+      for (let i = 0; i < NODE_COUNT; i++) {
+        nodes.push({
+          x: Math.random() * circuitCanvas.width,
+          y: Math.random() * circuitCanvas.height,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3
+        });
+      }
+      for (let i = 0; i < NODE_COUNT; i++) {
+        for (let j = i + 1; j < NODE_COUNT; j++) {
+          if (Math.random() < 0.35) {
+            lines.push([i, j]);
+          }
+        }
+      }
+      function drawCircuit() {
+        ctx.clearRect(0, 0, circuitCanvas.width, circuitCanvas.height);
+        // Draw lines
+        for (let [i, j] of lines) {
+          let a = nodes[i], b = nodes[j];
+          ctx.save();
+          ctx.strokeStyle = 'rgba(0,255,231,0.18)';
+          ctx.shadowColor = '#00ffe7';
+          ctx.shadowBlur = 8;
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+          ctx.restore();
+        }
+        // Draw nodes
+        for (let node of nodes) {
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, 7, 0, 2 * Math.PI);
+          ctx.fillStyle = '#00ffe7';
+          ctx.shadowColor = '#00ffe7';
+          ctx.shadowBlur = 18;
+          ctx.fill();
+          ctx.restore();
+          node.x += node.vx;
+          node.y += node.vy;
+          if (node.x < 0 || node.x > circuitCanvas.width) node.vx *= -1;
+          if (node.y < 0 || node.y > circuitCanvas.height) node.vy *= -1;
+        }
+        requestAnimationFrame(drawCircuit);
+      }
+      drawCircuit();
+    }
     </script>
     <style>
         body {
@@ -226,5 +491,6 @@
             }
         }
     </style>
+    <script src="nexus.js"></script>
 </body>
 </html> 
