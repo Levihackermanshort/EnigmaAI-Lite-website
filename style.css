@@ -861,4 +861,205 @@ body.light-mode a:focus, body.light-mode button:focus, body.light-mode .cta-btn:
     z-index: 0;
     opacity: 0.7;
     mix-blend-mode: lighten;
+}
+
+/* Vision Page Styles */
+.vision-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(0,255,231,0.1), rgba(0,184,255,0.1));
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+}
+
+.vision-subtitle {
+    font-size: 1.5rem;
+    color: #00ffe7;
+    margin-top: 1rem;
+    text-shadow: 0 0 10px rgba(0,255,231,0.3);
+}
+
+.vision-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.vision-statement {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #b2fff7;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.vision-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.pillar {
+    background: rgba(20, 30, 48, 0.8);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,255,231,0.1);
+}
+
+.pillar:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0,255,231,0.3);
+}
+
+.pillar i {
+    font-size: 2.5rem;
+    color: #00ffe7;
+    margin-bottom: 1rem;
+}
+
+.pillar h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.pillar p {
+    color: #b2fff7;
+    line-height: 1.6;
+}
+
+.objectives-section {
+    padding: 4rem 2rem;
+}
+
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.objective-card {
+    background: rgba(20, 30, 48, 0.8);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0,255,231,0.1);
+    transition: all 0.3s ease;
+}
+
+.objective-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0,255,231,0.3);
+    box-shadow: 0 10px 20px rgba(0,255,231,0.1);
+}
+
+.objective-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(0,255,231,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.objective-icon i {
+    font-size: 1.8rem;
+    color: #00ffe7;
+}
+
+.objective-card h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.objective-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.objective-card ul li {
+    color: #b2fff7;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.objective-card ul li:before {
+    content: "•";
+    color: #00ffe7;
+    position: absolute;
+    left: 0;
+}
+
+.impact-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(0,255,231,0.05), rgba(0,184,255,0.05));
+    border-radius: 1rem;
+    margin: 3rem 0;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.impact-card {
+    background: rgba(20, 30, 48, 0.8);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0,255,231,0.1);
+    transition: all 0.3s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0,255,231,0.3);
+}
+
+.impact-card h3 {
+    color: #00ffe7;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.impact-card p {
+    color: #b2fff7;
+    line-height: 1.6;
+}
+
+/* Fade-in animation */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .vision-pillars,
+    .objectives-grid,
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vision-hero {
+        padding: 3rem 1rem;
+    }
+
+    .vision-statement {
+        font-size: 1.1rem;
+    }
 } 

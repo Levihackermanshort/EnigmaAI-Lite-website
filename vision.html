@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://enigmaai-lite.org/">
     <title>Vision & Objectives - Enigma AI</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Enigma AI Logo" height="40">
+            <img src="/logo.png" alt="Enigma AI Logo" height="40">
             <span>Enigma AI</span>
         </div>
         <ul class="nav-links">
@@ -24,25 +27,166 @@
             <li><a href="timeline.html">Timeline</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="navbar-actions">
+            <button id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
+        </div>
     </nav>
+
     <main class="content-section">
-        <h1>Vision & Objectives</h1>
-        <section>
-            <h2>Vision</h2>
-            <p>Develop a user-focused AI assistant with domain-specific capabilities, ensuring ethical and transparent AI design using open-source technologies. Enigma AI aims to provide a testing platform for adaptive interfaces and dialogue personalization, while investigating efficient model inference and modular integration techniques.</p>
+        <div class="vision-hero">
+            <h1>Vision & Objectives</h1>
+            <p class="vision-subtitle">Shaping the Future of Ethical AI</p>
+        </div>
+
+        <section class="vision-overview fade-in-on-scroll">
+            <h2>Our Vision</h2>
+            <div class="vision-content">
+                <p class="vision-statement">Enigma AI envisions a future where artificial intelligence serves as a transparent, ethical, and adaptable tool that enhances human capabilities while maintaining strict ethical standards and user privacy.</p>
+                <div class="vision-pillars">
+                    <div class="pillar">
+                        <i class="fas fa-user-shield"></i>
+                        <h3>User-Centric Design</h3>
+                        <p>Prioritizing user needs and preferences in every aspect of AI development</p>
+                    </div>
+                    <div class="pillar">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>Modular Architecture</h3>
+                        <p>Flexible and scalable system design for easy integration and customization</p>
+                    </div>
+                    <div class="pillar">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>Ethical Framework</h3>
+                        <p>Built-in ethical guidelines and safety measures for responsible AI deployment</p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section>
-            <h2>Objectives</h2>
-            <ul>
-                <li>Develop a user-focused AI assistant with domain-specific capabilities.</li>
-                <li>Ensure ethical and transparent AI design using open-source technologies.</li>
-                <li>Provide a testing platform for adaptive interfaces and dialogue personalization.</li>
-                <li>Investigate efficient model inference and modular integration techniques.</li>
-            </ul>
+
+        <section class="objectives-section fade-in-on-scroll">
+            <h2>Strategic Objectives</h2>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Advanced AI Development</h3>
+                    <ul>
+                        <li>Develop domain-specific AI capabilities</li>
+                        <li>Implement state-of-the-art neural architectures</li>
+                        <li>Create efficient model inference systems</li>
+                    </ul>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Ethical Implementation</h3>
+                    <ul>
+                        <li>Ensure transparent AI decision-making</li>
+                        <li>Implement robust privacy protection</li>
+                        <li>Develop ethical guidelines and frameworks</li>
+                    </ul>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>User Experience</h3>
+                    <ul>
+                        <li>Create adaptive user interfaces</li>
+                        <li>Implement personalized dialogue systems</li>
+                        <li>Develop intuitive interaction patterns</li>
+                    </ul>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Technical Innovation</h3>
+                    <ul>
+                        <li>Research modular integration techniques</li>
+                        <li>Develop scalable deployment solutions</li>
+                        <li>Create efficient resource management systems</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="impact-section fade-in-on-scroll">
+            <h2>Expected Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <h3>Research Community</h3>
+                    <p>Contributing to AI research through open-source development and academic collaboration</p>
+                </div>
+                <div class="impact-card">
+                    <h3>Industry Standards</h3>
+                    <p>Setting new benchmarks for ethical AI development and deployment</p>
+                </div>
+                <div class="impact-card">
+                    <h3>User Experience</h3>
+                    <p>Advancing the field of human-AI interaction through innovative interface design</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section fade-in-on-scroll">
+            <h2>Join Our Journey</h2>
+            <p>Be part of shaping the future of ethical AI</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-btn">Get Involved</a>
+                <a href="research-paper.html" class="cta-btn secondary">Read Our Research</a>
+            </div>
         </section>
     </main>
+
     <footer>
-        &copy; 2024 Enigma AI – University of Huddersfield
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Enigma AI</h3>
+                <p>Advancing the future of artificial intelligence through ethical research and innovation.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="vision.html">Vision</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Enigma AI – University of Huddersfield
+        </div>
     </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            themeToggle.innerHTML = document.body.classList.contains('light-mode') ? 
+                '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // Fade-in animation on scroll
+        const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        fadeEls.forEach(el => observer.observe(el));
+    </script>
 </body>
 </html> 
