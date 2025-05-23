@@ -33,12 +33,13 @@
     </nav>
     <main class="content-section">
         <div class="vision-hero">
-            <h1>Timeline & Collaborations</h1>
+            <span class="section-badge">Timeline & Collaborations</span>
+            <h1 class="visually-hidden">Timeline & Collaborations</h1>
             <p class="vision-subtitle">Project Milestones and Key Partnerships</p>
         </div>
         <section class="fade-in-on-scroll">
             <div class="vision-content">
-                <h2>Timeline & Milestones</h2>
+                <span class="section-badge">Timeline & Milestones</span>
                 <div class="timeline-grid">
                     <div class="timeline-item"><span class="timeline-dot"></span><b>Q2 2024:</b> Initial prototype, UI/UX testing</div>
                     <div class="timeline-item"><span class="timeline-dot"></span><b>Q3 2024:</b> Backend integration, model experiments</div>
@@ -50,7 +51,7 @@
         </section>
         <section class="fade-in-on-scroll">
             <div class="vision-content">
-                <h2>Potential Collaborations</h2>
+                <span class="section-badge">Potential Collaborations</span>
                 <div class="objectives-grid">
                     <div class="objective-card"><i class="fas fa-university objective-icon"></i><h3>Universities</h3><p>Student-driven testing and interface feedback</p></div>
                     <div class="objective-card"><i class="fas fa-robot objective-icon"></i><h3>AI Organizations</h3><p>Joint development and ethical review</p></div>
@@ -136,6 +137,28 @@
             0% { box-shadow: 0 0 8px #00ffe7, 0 0 0 #00ffe7; }
             100% { box-shadow: 0 0 24px #00ffe7, 0 0 16px #00ffe7; }
         }
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00ffe7 60%, #00b8ff 100%);
+            color: #181c24;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 0 18px #00ffe7, 0 0 32px #00b8ff;
+            padding: 0.7em 2.2em;
+            margin-bottom: 1.2rem;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px #00ffe7;
+            position: relative;
+            z-index: 2;
+            animation: floatBadge 2.5s infinite alternate;
+        }
+        @keyframes floatBadge {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-7px); }
+        }
+        .visually-hidden { position: absolute; left: -9999px; }
     </style>
 </body>
 </html> 

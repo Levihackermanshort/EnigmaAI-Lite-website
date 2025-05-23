@@ -33,12 +33,13 @@
     </nav>
     <main class="content-section">
         <div class="vision-hero">
-            <h1>Contact & About</h1>
+            <span class="section-badge">Contact & About</span>
+            <h1 class="visually-hidden">Contact & About</h1>
             <p class="vision-subtitle">Get in Touch or Learn More About Enigma AI</p>
         </div>
         <section class="fade-in-on-scroll">
             <div class="vision-content">
-                <h2>Contact</h2>
+                <span class="section-badge">Contact</span>
                 <p>For academic or collaboration inquiries, please contact:<br>
                 <b>Zeyad Maeen</b><br>
                 Affiliation: University of Huddersfield<br>
@@ -47,13 +48,14 @@
         </section>
         <section class="fade-in-on-scroll">
             <div class="vision-content">
-                <h2>About the Project</h2>
+                <span class="section-badge">About the Project</span>
                 <p>Enigma AI is a forward-looking research and engineering project that merges conversational AI capabilities with ethical transparency and design flexibility. With the right collaborations, it can become a model for sustainable, user-centric AI systems.</p>
             </div>
         </section>
         <section class="fade-in-on-scroll">
             <div class="vision-content">
-                <h2>Frequently Asked Questions</h2>
+                <span class="section-badge">FAQ</span>
+                <h2 class="visually-hidden">Frequently Asked Questions</h2>
                 <div class="faq-list">
                     <div class="faq-item">
                         <button class="faq-question">What is Enigma AI and how is it different from other AI assistants?</button>
@@ -182,6 +184,28 @@
             margin-top: 0.2rem;
             font-size: 1rem;
         }
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00ffe7 60%, #00b8ff 100%);
+            color: #181c24;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 0 18px #00ffe7, 0 0 32px #00b8ff;
+            padding: 0.7em 2.2em;
+            margin-bottom: 1.2rem;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px #00ffe7;
+            position: relative;
+            z-index: 2;
+            animation: floatBadge 2.5s infinite alternate;
+        }
+        @keyframes floatBadge {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-7px); }
+        }
+        .visually-hidden { position: absolute; left: -9999px; }
     </style>
 </body>
 </html> 
