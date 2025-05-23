@@ -53,10 +53,26 @@
             <div class="vision-content">
                 <span class="section-badge">Potential Collaborations</span>
                 <div class="objectives-grid">
-                    <div class="objective-card"><i class="fas fa-university objective-icon"></i><h3>Universities</h3><p>Student-driven testing and interface feedback</p></div>
-                    <div class="objective-card"><i class="fas fa-robot objective-icon"></i><h3>AI Organizations</h3><p>Joint development and ethical review</p></div>
-                    <div class="objective-card"><i class="fas fa-code-branch objective-icon"></i><h3>Open-Source Communities</h3><p>LLM integration and benchmarking</p></div>
-                    <div class="objective-card"><i class="fas fa-balance-scale objective-icon"></i><h3>Policy Researchers</h3><p>AI governance alignment</p></div>
+                    <div class="objective-card">
+                        <div class="icon-circle"><i class="fas fa-university"></i></div>
+                        <h3>Universities</h3>
+                        <p>Student-driven testing and interface feedback</p>
+                    </div>
+                    <div class="objective-card">
+                        <div class="icon-circle"><i class="fas fa-robot"></i></div>
+                        <h3>AI Organizations</h3>
+                        <p>Joint development and ethical review</p>
+                    </div>
+                    <div class="objective-card">
+                        <div class="icon-circle"><i class="fas fa-code-branch"></i></div>
+                        <h3>Open-Source Communities</h3>
+                        <p>LLM integration and benchmarking</p>
+                    </div>
+                    <div class="objective-card">
+                        <div class="icon-circle"><i class="fas fa-balance-scale"></i></div>
+                        <h3>Policy Researchers</h3>
+                        <p>AI governance alignment</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -159,6 +175,21 @@
             100% { transform: translateY(-7px); }
         }
         .visually-hidden { position: absolute; left: -9999px; }
+        .icon-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: rgba(0,255,231,0.18);
+            border-radius: 50%;
+            margin: 0 auto 1rem auto;
+            box-shadow: 0 0 12px #00ffe7, 0 0 24px #00b8ff;
+        }
+        .icon-circle i {
+            color: #00ffe7;
+            font-size: 1.7rem;
+        }
     </style>
 </body>
 </html> 
