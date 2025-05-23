@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="https://enigmaai-lite.org/">
   <title>Background & Motivation - Enigma AI</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .section-badge {
       display: inline-block;
@@ -91,7 +93,7 @@
 <body>
   <nav class="navbar">
     <div class="logo">
-      <img src="logo.png" alt="Enigma AI Logo" height="40">
+      <img src="/logo.png" alt="Enigma AI Logo" height="40">
       <span>Enigma AI</span>
     </div>
     <ul class="nav-links">
@@ -106,6 +108,9 @@
       <li><a href="timeline.html">Timeline</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <div class="navbar-actions">
+      <button id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
+    </div>
   </nav>
   <main class="content-section">
     <div class="vision-hero">
@@ -135,7 +140,51 @@
     </section>
   </main>
   <footer>
-    &copy; 2025 Enigma AI. All rights reserved.
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Enigma AI</h3>
+        <p>Advancing the future of artificial intelligence through ethical research and innovation.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="vision.html">Vision</a></li>
+          <li><a href="methodology.html">Methodology</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <div class="social-links">
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 Enigma AI – University of Huddersfield
+    </div>
   </footer>
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      themeToggle.innerHTML = document.body.classList.contains('light-mode') ? 
+        '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    });
+
+    // Fade-in animation on scroll
+    const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html> 
