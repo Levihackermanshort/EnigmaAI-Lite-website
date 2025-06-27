@@ -27,9 +27,6 @@
             <li><a href="timeline.html">Timeline</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="navbar-actions">
-            <button id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
-        </div>
     </nav>
     <main class="content-section">
         <div class="vision-hero">
@@ -72,13 +69,6 @@
         </div>
     </footer>
     <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            themeToggle.innerHTML = document.body.classList.contains('light-mode') ? 
-                '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        });
         // Fade-in animation on scroll
         const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
         const observer = new IntersectionObserver((entries) => {
@@ -114,5 +104,6 @@
         }
         .visually-hidden { position: absolute; left: -9999px; }
     </style>
+    <script src="lang.js"></script>
 </body>
 </html> 

@@ -27,9 +27,6 @@
             <li><a href="timeline.html">Timeline</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="navbar-actions">
-            <button id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
-        </div>
     </nav>
 
     <main class="content-section">
@@ -171,15 +168,6 @@
     </footer>
 
     <script>
-        // Theme toggle functionality
-        // Updated: May 2024 - Enhanced vision page with modern design
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            themeToggle.innerHTML = document.body.classList.contains('light-mode') ? 
-                '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        });
-
         // Fade-in animation on scroll
         const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
         const observer = new IntersectionObserver((entries) => {
@@ -191,6 +179,8 @@
         }, { threshold: 0.2 });
         fadeEls.forEach(el => observer.observe(el));
     </script>
+
+    <script src="lang.js"></script>
 
     <style>
         .icon-circle {

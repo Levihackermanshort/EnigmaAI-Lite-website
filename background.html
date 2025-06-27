@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="https://enigmaai-lite.org/">
-  <title>Background & Motivation - Enigma AI</title>
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background & Motivation - Enigma AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Enigma AI Logo" height="40">
+            <span>Enigma AI</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vision.html">Vision</a></li>
+            <li><a href="background.html">Background</a></li>
+            <li><a href="questions.html">Research Questions</a></li>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="architecture.html">Architecture</a></li>
+            <li><a href="deployment.html">Deployment</a></li>
+            <li><a href="ethics.html">Ethics & Risk</a></li>
+            <li><a href="timeline.html">Timeline</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="content-section">
+        <div class="vision-hero" style="margin-bottom: 0;">
+            <div class="hero-badge-circle">
+                <span class="section-badge"><i class="fas fa-history"></i> Background & Motivation</span>
+            </div>
+            <h1 class="hero-title">Why We Created Enigma AI</h1>
+        </div>
+        <section id="background" class="content-section fade-in-on-scroll" style="margin-top: 2.5rem;">
+            <div class="container" style="max-width: 800px; margin: 0 auto; background: rgba(20,30,48,0.92); padding: 2rem 2.5rem; border-radius: 1.5rem; box-shadow: 0 4px 24px rgba(0,255,231,0.08); color: #eafffa; font-size: 1.18rem;">
+                <span class="section-badge"><i class="fas fa-lightbulb"></i> Background & Motivation</span>
+                <p>
+                  The genesis of <strong>Enigma AI</strong> stems from a profound need to build more interpretable, ethical, and purposeful AI systems. In recent years, artificial intelligence has made remarkable strides—but also raised important concerns around transparency, data privacy, and algorithmic bias. Enigma AI was created as a response to these challenges, aiming to strike a balance between powerful performance and human-aligned values.
+                </p>
+                <p>
+                  Inspired by the original <em>Enigma Machine</em>, which once decrypted the world's most complex wartime codes, our project envisions AI as a tool not of obfuscation, but of illumination. We believe AI should empower researchers, creators, and citizens—not just corporations and governments. Enigma AI is driven by a commitment to open research, verifiability, and ethical design.
+                </p>
+                <p>
+                  The foundation of this project also draws from interdisciplinary efforts across linguistics, cognitive science, and computational ethics. By embedding these disciplines at the core of our methodology, Enigma AI distinguishes itself from conventional black-box models and embraces a more human-centric design philosophy.
+                </p>
+                <p>
+                  Our motivation is simple yet ambitious: to create an AI framework that not only performs well but also earns public trust. This site outlines the journey of that effort—from foundational research questions to deployment and impact.
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Enigma AI – University of Huddersfield
+    </footer>
+    <style>
     .section-badge {
       display: inline-block;
       background: linear-gradient(135deg, #00ffe7 60%, #00b8ff 100%);
@@ -89,107 +135,6 @@
       margin-bottom: 0.7rem;
     }
   </style>
-</head>
-<body>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="/logo.png" alt="Enigma AI Logo" height="40">
-      <span>Enigma AI</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="vision.html">Vision</a></li>
-      <li><a href="background.html">Background</a></li>
-      <li><a href="questions.html">Research Questions</a></li>
-      <li><a href="methodology.html">Methodology</a></li>
-      <li><a href="architecture.html">Architecture</a></li>
-      <li><a href="deployment.html">Deployment</a></li>
-      <li><a href="ethics.html">Ethics & Risk</a></li>
-      <li><a href="timeline.html">Timeline</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="navbar-actions">
-      <button id="lang-en" aria-label="Switch to English" style="font-size:1.2em;margin-right:6px;">🇬🇧 EN</button>
-      <button id="lang-ar" aria-label="Switch to Arabic" style="font-size:1.2em;">🇸🇦 AR</button>
-    </div>
-  </nav>
-  <main class="content-section">
-    <div class="vision-hero">
-      <div class="hero-badge-circle">
-        <span class="section-badge"><i class="fas fa-history"></i> Background & Motivation</span>
-      </div>
-      <h1 class="hero-title">Background & Motivation</h1>
-    </div>
-    <section class="fade-in-on-scroll" style="margin-top: 2.5rem;">
-      <div class="vision-content">
-        <span class="section-badge"><i class="fas fa-lightbulb"></i> The Need for Ethical AI</span>
-        <p>In an era where artificial intelligence is increasingly integrated into daily life, ensuring that these systems operate ethically and transparently is paramount. The rapid advancement of AI technologies presents both opportunities and challenges, necessitating a framework that prioritizes user privacy, fairness, and accountability.</p>
-
-        <span class="section-badge"><i class="fas fa-bridge"></i> Bridging the Gap Between Innovation and Responsibility</span>
-        <p>While AI offers transformative potential across various sectors, there exists a critical need to align technological innovation with ethical considerations. Enigma AI is committed to developing AI solutions that not only push the boundaries of what's possible but also adhere to stringent ethical standards, ensuring that progress does not come at the expense of societal values.</p>
-
-        <span class="section-badge"><i class="fas fa-handshake"></i> Our Commitment</span>
-        <ul>
-          <li><strong>Transparency</strong>: Ensuring that AI decision-making processes are understandable and explainable to users.</li>
-          <li><strong>User-Centric Design</strong>: Placing user needs and experiences at the forefront of AI development.</li>
-          <li><strong>Ethical Standards</strong>: Implementing robust guidelines to govern AI behavior, safeguarding against biases and unintended consequences.</li>
-          <li><strong>Collaboration</strong>: Engaging with academic, industry, and public stakeholders to foster a holistic approach to ethical AI.</li>
-        </ul>
-
-        <p>By intertwining cutting-edge research with a steadfast commitment to ethics, Enigma AI aims to set a precedent for responsible AI development and deployment.</p>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Enigma AI</h3>
-        <p>Advancing the future of artificial intelligence through ethical research and innovation.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="vision.html">Vision</a></li>
-          <li><a href="methodology.html">Methodology</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Connect</h3>
-        <div class="social-links">
-          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2024 Enigma AI – University of Huddersfield
-    </div>
-  </footer>
-  <script>
-    // Language switcher logic
-    const enBtn = document.getElementById('lang-en');
-    const arBtn = document.getElementById('lang-ar');
-    enBtn.addEventListener('click', () => {
-      document.documentElement.lang = 'en';
-      document.body.dir = 'ltr';
-    });
-    arBtn.addEventListener('click', () => {
-      document.documentElement.lang = 'ar';
-      document.body.dir = 'rtl';
-    });
-
-    // Fade-in animation on scroll
-    const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-    fadeEls.forEach(el => observer.observe(el));
-  </script>
+  <script src="lang.js"></script>
 </body>
 </html> 

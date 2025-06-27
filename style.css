@@ -481,34 +481,6 @@ footer {
 .fade-in-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.8s, transform 0.8s; }
 .fade-in-on-scroll.visible { opacity: 1; transform: none; }
 
-/* Dark/Light mode toggle */
-body.light-mode {
-    background: #f4f4f4;
-    color: #181c24;
-}
-body.light-mode .navbar, body.light-mode .footer-content, body.light-mode footer, body.light-mode .hero-content, body.light-mode .feature-card, body.light-mode .research-card {
-    background: #fff !important;
-    color: #181c24 !important;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-}
-body.light-mode .section-title, body.light-mode .footer-section h3, body.light-mode .hero-content h1 {
-    color: #00b8ff !important;
-    text-shadow: none;
-}
-body.light-mode .cta-btn {
-    background: linear-gradient(135deg, #00b8ff, #00ffe7);
-    color: #fff;
-}
-body.light-mode .cta-btn.secondary {
-    background: rgba(0,184,255,0.12);
-    color: #00b8ff;
-    border: 1.5px solid #00b8ff;
-}
-body.light-mode .cta-btn.secondary:hover {
-    background: #00b8ff;
-    color: #fff;
-}
-
 /* Modal styles */
 .modal {
     display: none;
@@ -529,10 +501,6 @@ body.light-mode .cta-btn.secondary:hover {
     position: relative;
     box-shadow: 0 4px 32px rgba(0,255,231,0.15);
 }
-body.light-mode .modal-content {
-    background: #fff;
-    color: #181c24;
-}
 .close-modal {
     position: absolute;
     top: 1rem;
@@ -540,9 +508,6 @@ body.light-mode .modal-content {
     font-size: 2rem;
     color: #00ffe7;
     cursor: pointer;
-}
-body.light-mode .close-modal {
-    color: #00b8ff;
 }
 
 /* Focus/keyboard accessibility */
@@ -553,9 +518,6 @@ a, button, .cta-btn, .feature-card, .research-card {
 a:focus, button:focus, .cta-btn:focus, .feature-card:focus, .research-card:focus {
     box-shadow: 0 0 0 3px #00ffe7aa;
     border-radius: 6px;
-}
-body.light-mode a:focus, body.light-mode button:focus, body.light-mode .cta-btn:focus {
-    box-shadow: 0 0 0 3px #00b8ffaa;
 }
 
 /* Card and button hover/focus */

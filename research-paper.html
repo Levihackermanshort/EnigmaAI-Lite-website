@@ -25,9 +25,6 @@
             <li><a href="contact.html">Contact</a></li>
             <li><a href="research-paper.html">Research Paper</a></li>
         </ul>
-        <div class="navbar-actions">
-            <button id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
-        </div>
     </nav>
     <div class="paper-container">
         <aside class="toc-sidebar fade-in-on-scroll">
@@ -169,13 +166,6 @@
         </div>
     </footer>
     <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            themeToggle.innerHTML = document.body.classList.contains('light-mode') ? 
-                '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        });
         // Fade-in animation on scroll
         const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
         const observer = new IntersectionObserver((entries) => {
@@ -197,6 +187,7 @@
             });
         });
     </script>
+    <script src="lang.js"></script>
     <style>
         .paper-container {
             display: flex;
