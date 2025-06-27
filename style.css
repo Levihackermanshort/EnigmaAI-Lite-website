@@ -551,19 +551,6 @@ a:focus, button:focus, .cta-btn:focus, .feature-card:focus, .research-card:focus
     display: flex;
     align-items: center;
 }
-#theme-toggle {
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    margin-left: 0.5rem;
-    transition: color 0.2s;
-    outline: none;
-}
-#theme-toggle:focus, #theme-toggle:hover {
-    color: #fff;
-}
 
 /* Typing animation for subtitle */
 #typing-subtitle {
