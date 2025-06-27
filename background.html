@@ -109,7 +109,8 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="navbar-actions">
-      <button id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
+      <button id="lang-en" aria-label="Switch to English" style="font-size:1.2em;margin-right:6px;">🇬🇧 EN</button>
+      <button id="lang-ar" aria-label="Switch to Arabic" style="font-size:1.2em;">🇸🇦 AR</button>
     </div>
   </nav>
   <main class="content-section">
@@ -167,12 +168,16 @@
     </div>
   </footer>
   <script>
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      themeToggle.innerHTML = document.body.classList.contains('light-mode') ? 
-        '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    // Language switcher logic
+    const enBtn = document.getElementById('lang-en');
+    const arBtn = document.getElementById('lang-ar');
+    enBtn.addEventListener('click', () => {
+      document.documentElement.lang = 'en';
+      document.body.dir = 'ltr';
+    });
+    arBtn.addEventListener('click', () => {
+      document.documentElement.lang = 'ar';
+      document.body.dir = 'rtl';
     });
 
     // Fade-in animation on scroll
