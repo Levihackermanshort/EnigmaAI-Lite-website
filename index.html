@@ -31,7 +31,8 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="navbar-actions">
-          <button id="theme-toggle" aria-label="Toggle dark or light mode"><i class="fas fa-moon"></i></button>
+          <button id="lang-en" aria-label="Switch to English" style="font-size:1.2em;margin-right:6px;">🇬🇧 EN</button>
+          <button id="lang-ar" aria-label="Switch to Arabic" style="font-size:1.2em;">🇸🇦 AR</button>
         </div>
     </nav>
     <header class="hero">
@@ -312,12 +313,6 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
-    // Dark/Light mode toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      themeToggle.innerHTML = document.body.classList.contains('light-mode') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    });
     // Fade-in on scroll
     const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
     const observer = new IntersectionObserver((entries) => {
@@ -368,6 +363,19 @@
             answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
             this.classList.toggle('active');
         });
+    });
+    // Language switcher logic
+    const enBtn = document.getElementById('lang-en');
+    const arBtn = document.getElementById('lang-ar');
+    enBtn.addEventListener('click', () => {
+      document.documentElement.lang = 'en';
+      document.body.dir = 'ltr';
+      // Optionally, swap text content to English here
+    });
+    arBtn.addEventListener('click', () => {
+      document.documentElement.lang = 'ar';
+      document.body.dir = 'rtl';
+      // Optionally, swap text content to Arabic here
     });
     </script>
     <script>
