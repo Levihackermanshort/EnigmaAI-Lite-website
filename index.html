@@ -30,10 +30,6 @@
             <li><a href="timeline.html">Timeline</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="navbar-actions">
-          <button id="lang-en" aria-label="Switch to English" style="font-size:1.2em;margin-right:6px;">🇬🇧 EN</button>
-          <button id="lang-ar" aria-label="Switch to Arabic" style="font-size:1.2em;">🇸🇦 AR</button>
-        </div>
     </nav>
     <header class="hero">
         <div class="hero-visuals">
@@ -363,19 +359,6 @@
             answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
             this.classList.toggle('active');
         });
-    });
-    // Language switcher logic
-    const enBtn = document.getElementById('lang-en');
-    const arBtn = document.getElementById('lang-ar');
-    enBtn.addEventListener('click', () => {
-      document.documentElement.lang = 'en';
-      document.body.dir = 'ltr';
-      // Optionally, swap text content to English here
-    });
-    arBtn.addEventListener('click', () => {
-      document.documentElement.lang = 'ar';
-      document.body.dir = 'rtl';
-      // Optionally, swap text content to Arabic here
     });
     </script>
     <script>

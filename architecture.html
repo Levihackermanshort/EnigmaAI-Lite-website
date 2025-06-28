@@ -27,10 +27,6 @@
             <li><a href="timeline.html">Timeline</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="navbar-actions">
-            <button id="lang-en" aria-label="Switch to English" style="font-size:1.2em;margin-right:6px;">🇬🇧 EN</button>
-            <button id="lang-ar" aria-label="Switch to Arabic" style="font-size:1.2em;">🇸🇦 AR</button>
-        </div>
     </nav>
     <main class="content-section">
         <div class="vision-hero">
@@ -78,17 +74,6 @@
         </div>
     </footer>
     <script>
-        // Language switcher logic
-        const enBtn = document.getElementById('lang-en');
-        const arBtn = document.getElementById('lang-ar');
-        enBtn.addEventListener('click', () => {
-            document.documentElement.lang = 'en';
-            document.body.dir = 'ltr';
-        });
-        arBtn.addEventListener('click', () => {
-            document.documentElement.lang = 'ar';
-            document.body.dir = 'rtl';
-        });
         // Fade-in animation on scroll
         const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
         const observer = new IntersectionObserver((entries) => {
